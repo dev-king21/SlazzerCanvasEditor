@@ -1,17 +1,17 @@
 {
-	"Edit": [
+	"MARKER": [
 		{
-			"name": "Edit",
+			"name": "Marker",
 			"description": "",
-			"type": "Edit",
+			"type": "marker",
 			"icon": {
 				"prefix": "fas",
-				"name": "heart"
+				"name": "map-marker-alt"
 			},
 			"option": {
 				"type": "i-text",
 				"text": "\uf3c5",
-				"fontFamily": "icomoon",
+				"fontFamily": "Font Awesome 5 Free",
 				"fontWeight": 900,
 				"fontSize": 60,
 				"width": 30,
@@ -21,7 +21,7 @@
 			}
 		}
 	],
-	"Bg Image": [
+	"TEXT": [
 		{
 			"name": "Text",
 			"description": "",
@@ -40,7 +40,7 @@
 			}
 		}
 	],
-	"Bg Color": [
+	"IMAGE": [
 		{
 			"name": "Image",
 			"description": "",
@@ -72,7 +72,7 @@
 			}
 		}
 	],
-	"Text": [
+	"SHAPE": [
 		{
 			"name": "Triangle",
 			"description": "",
@@ -136,7 +136,7 @@
 			}
 		}
 	],
-	"Templates": [
+	"DRAWING": [
 		{
 			"name": "Polygon",
 			"description": "",
@@ -177,7 +177,7 @@
 			}
 		}
 	],
-	"Add Blur": [
+	"ELEMENT": [
 		{
 			"name": "Chart",
 			"description": "",
@@ -246,58 +246,7 @@
 			}
 		}
 	],
-	"Saturation Effects": [
-		{
-			"name": "Default",
-			"description": "",
-			"type": "default",
-			"icon": {
-				"prefix": "fas",
-				"name": "bezier-curve"
-			},
-			"option": {
-				"type": "svg",
-				"superType": "svg",
-				"name": "New SVG",
-				"loadType": "svg"
-			}
-		}
-	],
-	"Artsy Options": [
-		{
-			"name": "Default",
-			"description": "",
-			"type": "default",
-			"icon": {
-				"prefix": "fas",
-				"name": "bezier-curve"
-			},
-			"option": {
-				"type": "svg",
-				"superType": "svg",
-				"name": "New SVG",
-				"loadType": "svg"
-			}
-		}
-	],
-	"Add Logo": [
-		{
-			"name": "Default",
-			"description": "",
-			"type": "default",
-			"icon": {
-				"prefix": "fas",
-				"name": "bezier-curve"
-			},
-			"option": {
-				"type": "svg",
-				"superType": "svg",
-				"name": "New SVG",
-				"loadType": "svg"
-			}
-		}
-	],
-	"Frames": [
+	"SVG": [
 		{
 			"name": "Default",
 			"description": "",

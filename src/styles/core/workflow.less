@@ -4,26 +4,31 @@
     display: -ms-flexbox;
     display: flex;
     flex: 1;
+
     &-items {
         position: relative;
-        width: 240px;
+        width: 100px;
         -webkit-box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.5);
         -moz-box-shadow: 5px 0 5px -5px rgba(56, 41, 41, 0.5);
         box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.5);
         z-index: 900;
         transition: width .5s ease;
+
         &:hover {
             .rde-track-vertical {
                 opacity: 1;
                 z-index: 9999;
             }
         }
+
         &.minimize {
             width: 47px;
         }
+
         .ant-collapse-content-box {
             padding: 0;
         }
+
         &-item {
             display: flex;
             height: 40px;
@@ -33,6 +38,7 @@
             position: relative;
             background: #fff;
             cursor: pointer;
+
             &-icon {
                 padding: 0 8px;
                 font-size: 1.5em;
@@ -40,15 +46,18 @@
                 display: flex;
                 justify-content: center;
             }
+
             &-text {
                 padding: 0 8px;
                 font-size: 14px;
                 font-weight: 500;
             }
+
             &:hover {
                 background: rgba(0, 0, 0, .2);
-                box-shadow: 0 0 11px rgba(33, 33, 33, .2); 
+                box-shadow: 0 0 11px rgba(33, 33, 33, .2);
             }
+
             &:not(:last-child):after {
                 background-color: #e8e8e8;
                 position: absolute;
@@ -59,22 +68,26 @@
             }
         }
     }
+
     &-canvas {
         position: relative;
         -webkit-box-flex: 1;
         -ms-flex: 1;
         flex: 1;
+
         .rde-canvas {
             position: absolute;
             width: 100%;
             height: 100%;
             top: 0;
             left: 0;
+
             iframe {
                 pointer-events: none;
             }
         }
     }
+
     &-toolbar {
         &-debug {
             background: rgba(0, 0, 0, 0.25);
@@ -87,6 +100,7 @@
             -moz-box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
             box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
         }
+
         &-interaction {
             color: #fff;
             background: rgba(0, 0, 0, 0.25);
@@ -99,6 +113,7 @@
             -moz-box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
             box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
         }
+
         &-zoom {
             background: rgba(0, 0, 0, 0.25);
             position: absolute;
@@ -111,6 +126,7 @@
             box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
         }
     }
+
     &-properties {
         position: absolute;
         overflow-y: auto;
@@ -121,6 +137,7 @@
         -webkit-box-shadow: -5px 0 5px -5px rgba(0, 0, 0, .5);
         -moz-box-shadow: -5px 0 5px -5px rgba(0, 0, 0, .5);
         box-shadow: -5px 0 5px -5px rgba(0, 0, 0, .5);
+
         &:hover {
             .rde-track-vertical {
                 opacity: 1;
@@ -128,6 +145,7 @@
             }
         }
     }
+
     &-configurations {
         position: relative;
         overflow-y: auto;
@@ -138,18 +156,22 @@
         box-shadow: -5px 0 5px -5px rgba(0, 0, 0, .5);
         background: #fff;
         transition: width .5s ease;
+
         &.minimize {
             width: 60px;
         }
+
         .ant-tabs {
             .ant-tabs-content {
                 padding-right: 0;
                 height: 100%;
+
                 .ant-tabs-tabpane {
                     height: 100%;
                 }
             }
         }
+
         .ant-list-item {
             .ant-list-item-meta {
                 .ant-list-item-meta-content {
@@ -157,21 +179,25 @@
                         font-size: 16px;
                         margin: 0;
                     }
+
                     .ant-list-item-meta-description {
                         font-size: 11px;
                     }
                 }
             }
         }
+
         .ant-table {
             .ant-table-content {
                 table {
                     border: 0;
                     background: transparent;
+
                     tr {
                         &.selected-item {
                             background: rgba(0, 0, 0, .25);
                         }
+
                         &:hover {
                             td {
                                 cursor: pointer;
@@ -180,22 +206,26 @@
                         }
                     }
                 }
+
                 .ant-table-placeholder {
                     background: transparent;
                     border-bottom: 0;
                 }
             }
         }
+
         &:hover {
             .rde-track-vertical {
                 opacity: 1;
                 z-index: 9999;
             }
         }
+
         &-console-item {
             background-color: inherit;
             padding: 4px 0 0 0;
             animation: slide-up 0.4s ease-in-out;
+
             &-content {
                 position: relative;
                 max-height: 0;
@@ -205,28 +235,33 @@
                 -webkit-transition: max-height .5s;
                 transition: max-height .5s;
                 overflow: hidden;
+
                 &.selected-item {
                     max-height: 1000px;
                 }
+
                 .clipboard {
                     position: absolute;
                     top: 20px;
                     right: 20px;
                 }
+
                 .popup {
                     position: absolute;
                     top: 20px;
                     right: 50px;
                 }
             }
+
             &.selected-item {
                 background: rgba(0, 0, 0, .25);
-                box-shadow: 0 0 11px rgba(33, 33, 33, .2);     
+                box-shadow: 0 0 11px rgba(33, 33, 33, .2);
             }
+
             &:hover {
                 cursor: pointer;
                 background: rgba(0, 0, 0, .15);
-                box-shadow: 0 0 11px rgba(33, 33, 33, .2); 
+                box-shadow: 0 0 11px rgba(33, 33, 33, .2);
             }
         }
     }

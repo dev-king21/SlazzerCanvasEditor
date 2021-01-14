@@ -10,6 +10,7 @@ import Icon from '../icon/Icon';
 import Scrollbar from '../common/Scrollbar';
 import CommonButton from '../common/CommonButton';
 import { SVGModal } from '../common';
+import { div } from 'react-dom-factories';
 
 notification.config({
 	top: 80,
@@ -231,6 +232,13 @@ class ImageMapItems extends Component {
 		</Flex>
 	);
 
+	// renderIcon = icon => (
+	// 	<span>
+	// 		<i className={`icon-${icon.icon.name}`}></i>
+	// 	</span>
+	// );
+
+	
 	renderItem = (item, centered) =>
 		item.type === 'drawing' ? (
 			<div
@@ -268,53 +276,30 @@ class ImageMapItems extends Component {
 		const className = classnames('rde-editor-items', {
 			minimize: collapse,
 		});
+	
 		return (
 			<div className={className}>
-				<Flex flex="1" flexDirection="column" style={{ height: '100%' }}>
-					<Flex justifyContent="center" alignItems="center" style={{ height: 40 }}>
-						<CommonButton
-							icon={collapse ? 'angle-double-right' : 'angle-double-left'}
-							shape="circle"
-							className="rde-action-btn"
-							style={{ margin: '0 4px' }}
-							onClick={this.handlers.onCollapse}
-						/>
-						{collapse ? null : (
-							<Input
-								style={{ margin: '8px' }}
-								placeholder={i18n.t('action.search-list')}
-								onChange={this.handlers.onSearchNode}
-								value={textSearch}
-								allowClear
-							/>
-						)}
-					</Flex>
+				<Flex flex="1" flexDirection="column" style={{ height: '100%', background: '#2b2b2b' }}>
+					
 					<Scrollbar>
 						<Flex flex="1" style={{ overflowY: 'hidden' }}>
-							{(textSearch.length && this.renderItems(filteredDescriptors)) ||
-								(collapse ? (
-									<Flex
-										flexWrap="wrap"
-										flexDirection="column"
-										style={{ width: '100%' }}
-										justifyContent="center"
-									>
-										{this.handlers.transformList().map(item => this.renderItem(item))}
-									</Flex>
-								) : (
-									<Collapse
-										style={{ width: '100%' }}
-										bordered={false}
-										activeKey={activeKey.length ? activeKey : Object.keys(descriptors)}
-										onChange={this.handlers.onChangeActiveKey}
-									>
-										{Object.keys(descriptors).map(key => (
-											<Collapse.Panel key={key} header={key} showArrow={!collapse}>
-												{this.renderItems(descriptors[key])}
-											</Collapse.Panel>
-										))}
-									</Collapse>
+								<Collapse
+									style={{ width: '100%', background: '#2b2b2b'}}
+									bordered={false}
+									activeKey={activeKey.length ? activeKey : Object.keys(descriptors)}
+									onChange={this.handlers.onChangeActiveKey}
+								>
+								{Object.keys(descriptors).map(key => (
+									<div>
+										{/* <span>{this.renderIcon(descriptors[key])}</span> */}
+										<Collapse.Panel key={key} header={key} showArrow={false}>
+											{/* {this.renderItems(descriptors[key])} */}
+										</Collapse.Panel>
+										</div>
+										
+							
 								))}
+								</Collapse>
 						</Flex>
 					</Scrollbar>
 				</Flex>
@@ -326,6 +311,7 @@ class ImageMapItems extends Component {
 				/>
 			</div>
 		);
+		
 	}
 }
 

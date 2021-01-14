@@ -721,16 +721,6 @@ class ImageMapEditor extends Component {
 			</React.Fragment>
 		);
 
-		// const zoomButton = (
-		// 		<ImageMapFooterToolbar
-		// 			canvasRef={this.canvasRef}
-		// 			preview={preview}
-		// 			onChangePreview={onChangePreview}
-		// 			zoomRatio={zoomRatio}
-		// 		/>
-			
-		// );
-
 		const title = <ImageMapTitle title={titleContent} action={action} >
 			</ImageMapTitle>;
 
@@ -746,11 +736,22 @@ class ImageMapEditor extends Component {
 				/>
 				<div className="rde-editor-canvas-container">
 					<div className="rde-editor-header-toolbar">
+						<span>CREDITS LEFT: 200</span>
 						<ImageMapHeaderToolbar
 							canvasRef={this.canvasRef}
 							selectedItem={selectedItem}
 							onSelect={onSelect}
 						/>
+						
+						{/* <div className="rde-editor-footer-toolbar">
+							<ImageMapFooterToolbar
+								canvasRef={this.canvasRef}
+								preview={preview}
+								onChangePreview={onChangePreview}
+								zoomRatio={zoomRatio}
+							/>
+						</div> */}
+						<div>Downloads</div>
 					</div>
 					<div
 						ref={c => {
@@ -781,16 +782,8 @@ class ImageMapEditor extends Component {
 							}}
 						/>
 					</div>
-					<div className="rde-editor-footer-toolbar">
-						<ImageMapFooterToolbar
-							canvasRef={this.canvasRef}
-							preview={preview}
-							onChangePreview={onChangePreview}
-							zoomRatio={zoomRatio}
-						/>
-					</div>
 				</div>
-				<ImageMapConfigurations
+				{/* <ImageMapConfigurations
 					canvasRef={this.canvasRef}
 					onChange={onChange}
 					selectedItem={selectedItem}
@@ -800,7 +793,7 @@ class ImageMapEditor extends Component {
 					animations={animations}
 					styles={styles}
 					dataSources={dataSources}
-				/>
+				/> */}
 				<ImageMapPreview
 					preview={preview}
 					onChangePreview={onChangePreview}

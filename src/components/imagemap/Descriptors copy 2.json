@@ -6,7 +6,7 @@
 			"type": "Edit",
 			"icon": {
 				"prefix": "fas",
-				"name": "heart"
+				"name": "map-marker-alt"
 			},
 			"option": {
 				"type": "i-text",

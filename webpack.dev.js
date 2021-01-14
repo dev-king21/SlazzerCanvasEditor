@@ -47,10 +47,21 @@ module.exports = merge(baseConfig, {
 		},
 	},
 	plugins: [
-		new webpack.HotModuleReplacementPlugin(), // HMR을 사용하기 위한 플러그인
+		new webpack.HotModuleReplacementPlugin(), //plugin for HMR
 		new HtmlWebpackPlugin({
 			filename: 'index.html',
 			title: 'React Design Editor',
 		}),
 	],
+	/* module: {
+		rules: [
+			{
+                test: /\.css$/,
+                use: [
+					{ loader: "style-loader" },
+					{ loader: "css-loader" }
+                ]
+			},
+		]
+	} */
 });
