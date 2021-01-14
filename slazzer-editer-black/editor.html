@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Slazzer</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Costom ScrollBer -->
+	<link rel="stylesheet" href="css/mCustomScrollber.css">
+    <!-- All Custom css -->    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="appear-animate">
+	<div class="editor">
+		<!-- Top Ber -->
+		<div class="topBer">
+			<div class="logo">
+				<a href=""><img src="images/white-logo.png" alt=""></a>
+			</div>
+			<div class="topBer-middle">
+				<span>popular format</span>
+				<div class="btn-group dropdown">
+					<button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Facebook 1080 x 1080px
+					</button>
+					<div class="dropdown-menu">
+						<a href="#window" data-backdrop="false" data-toggle="modal" title="">Select custom Size</a>
+						<a href="javascript:void(0);" title="">Facebook 1080 x 1080px</a>
+						<a href="javascript:void(0);" title="">Facebook 1200 x 628px</a>
+						<a href="javascript:void(0);" title="">Facebook 1640 x 856px</a>
+						<a href="javascript:void(0);" title="">Facebook 1702 x 630px</a>
+						<a href="javascript:void(0);" title="">Facebook 1200 x 1200px</a>
+						<a href="javascript:void(0);" title="">Facebook 360 x 360px</a>
+						<a href="javascript:void(0);" title="">Facebook 1080 x 1920px</a>
+						<a href="javascript:void(0);" title="">YouTube 2560 x 1440px</a>
+						<a href="javascript:void(0);" title="">YouTube 800 x 800px</a>
+						<a href="javascript:void(0);" title="">YouTube 300 x 250px</a>
+						<a href="javascript:void(0);" title="">YouTube 300 x 60px</a>
+						<a href="javascript:void(0);" title="">YouTube 480 x 70px</a>
+						<a href="javascript:void(0);" title="">YouTube 1280 x 720px</a>
+						<a href="javascript:void(0);" title="">Instagram 420 x 654px</a>
+						<a href="javascript:void(0);" title="">Instagram 1080 x 566px</a>
+						<a href="javascript:void(0);" title="">Instagram 1080 x 1350px</a>
+						<a href="javascript:void(0);" title="">Instagram 360 x 360px</a>
+						<a href="javascript:void(0);" title="">Pinterest 1000 x 1500px</a>
+						<a href="javascript:void(0);" title="">Pinterest 1000 x 1000px</a>
+						<a href="javascript:void(0);" title="">LinkedIn 1536 x 768px</a>
+						<a href="javascript:void(0);" title="">LinkedIn 1584 x 396px</a>
+						<a href="javascript:void(0);" title="">LinkedIn 1400 x 800px</a>
+						<a href="javascript:void(0);" title="">LinkedIn 400 x 400px</a>
+						<a href="javascript:void(0);" title="">LinkedIn 1200 x 627px</a>
+						<a href="javascript:void(0);" title="">Twitter 1500 x 500px</a>
+						<a href="javascript:void(0);" title="">Twitter 800 x 320px</a>
+						<a href="javascript:void(0);" title="">Twitter 1024 x 512px</a>
+					</div>
+				</div>
+			</div>
+			<div class="topBer-buttons">
+				<button type="button" class="btn">
+					change API key
+				</button>
+				<button type="button" class="btn btn-red">
+					<i class="icon-upload"></i>
+					<span>upload image</span>
+				</button>
+			</div>
+		</div>
+
+		<!-- Middle Ber -->
+		<div class="middleBer">
+			<div class="options-ber">
+				<ul class="option">
+					<li>
+						<button type="button" class="showSingle" target="1">
+							<i class="icon-params"></i>
+							<span>Edit</span>
+						</button>
+					</li>
+					<li>
+						<button type="button" class="showSingle" target="2">
+							<i class="icon-pictures"></i>
+							<span>Bg image</span>
+						</button>
+					</li>
+					<li>
+						<button type="button" class="showSingle" target="3">
+							<i class="icon-paintbrush"></i>
+							<span>Bg color</span>
+						</button>
+					</li>
+					<li>
+						<button type="button" class="showSingle" target="4">
+							<i class="icon-pencil"></i>
+							<span>Text</span>
+						</button>
+					</li>
+					<li>
+						<button type="button" class="showSingle" target="5">
+							<i class="icon-diamond"></i>
+							<span>Templates</span>
+						</button>
+					</li>
+					<li>
+						<button type="button" class="showSingle" target="6">
+							<i class="icon-droplet"></i>
+							<span>Add Blur</span>
+						</button>
+					</li>
+					<li>
+						<button type="button" class="showSingle" target="7">
+							<i class="icon-star"></i>
+							<span>Saturation Effects</span>
+						</button>
+					</li>
+					<li>
+						<button type="button" class="showSingle" target="8">
+							<i class="icon-heart"></i>
+							<span>Artsy Options</span>
+						</button>
+					</li>
+					<li>
+						<button type="button" class="showSingle" target="9">
+							<i class="icon-omega"></i>
+							<span>add Logo</span>
+						</button>
+					</li>
+					<li>
+						<button type="button" class="showSingle" target="10">
+							<i class="icon-frame"></i>
+							<span>Frames</span>
+						</button>
+					</li>
+				</ul>
+			</div>
+
+			<!-- Edit -->
+			<div id="div1" class="targetDiv mscroller edit-opions">
+				<ul class="accordion" id="accordion">
+					<li class="accordion-row">
+						<div class="box-header" id="heading1">
+                    		<a  href="javascript:void(0);" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                        		<i class="icon-crop"></i>
+								crop
+                    		</a>
+                		</div>
+                		<div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#accordion">
+                			<div class="collapsebox">
+		                        <div class="block">
+									<select name="">
+										<option value="">Original Size</option>
+										<option value="">Square 1:1</option>
+										<option value="">Pasport Photo 4:6</option>
+										<option value="">Video thumb 16:9</option>
+									</select>
+								</div>
+								<ul class="two-column">
+									<li>
+										<label for="">Width(px)</label>
+										<input type="number" name="" value="900">
+									</li>
+									<li>
+										<label for="">Height(px)</label>
+										<input type="number" name="" value="600">
+									</li>
+								</ul>
+								<div class="save-change">
+									<button type="button">
+										<i class="icon-cancel1"></i>
+										<span>Cancle</span>
+									</button>
+									<button type="button" class="">
+										<i class="icon-check-circle"></i>
+										<span>Save</span>
+									</button>
+								</div>
+							</div>
+		                </div>
+					</li>
+					<li class="accordion-row">
+						<div class="box-header" id="heading3">
+		                    <a href="javascript:void(0);" class="collapsed" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+		                        <i class="icon-rotate-cw"></i>
+								Rotate
+		                    </a>
+		                </div>
+		                <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordion">
+		                	<div class="collapsebox">
+								<ul class="rotate">
+									<li>
+										<button type="button" data-toggle="tooltip" data-placement="top" title="Rotate Counterclockwise">
+											<i class="icon-rotate-ccw"></i>
+										</button>
+									</li>
+									<li>
+										<button type="button" data-toggle="tooltip" data-placement="top" title="Rotate Clockwise">
+											<i class="icon-rotate-cw"></i>
+										</button>
+									</li>
+									<li>
+										<button type="button" data-toggle="tooltip" data-placement="top" title="Flip Horizontallt">
+											<i class="icon-swap_horizontal_circle"></i>
+										</button>
+									</li>
+									<li>
+										<button type="button" data-toggle="tooltip" data-placement="top" title="Flip Vertically">
+											<i class="icon-swap_vertical_circle"></i>
+										</button>
+									</li>
+								</ul>
+								<div class="block">
+									<label for="">Strength</label>
+									<div class="ranger-value">
+										<button type="button"><i class="icon-minus"></i></button>
+										<button type="button"><i class="icon-plus"></i></button>
+										<div class="value">0<sup>°</sup></div>
+									</div>	
+									<div class="range-slider">
+									    <input class="input-range" orient="vertical" type="range" step="0.5" value="5" min="1" max="10">
+									    <span class="range-value"></span>
+									</div>
+								</div>
+							</div>
+		                </div>
+					</li>
+					<li class="accordion-row">
+						<div class="box-header" id="heading4">
+		                    <a href="javascript:void(0);" class="collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+		                      	<i class="icon-exposure"></i>
+								Exposure  
+		                    </a>
+		                </div>
+		                <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordion">
+		                	<div class="collapsebox">
+								<div class="block">
+									<label for="">brightness</label>
+									<div class="ranger-value">
+										<button type="button"><i class="icon-minus"></i></button>
+										<button type="button"><i class="icon-plus"></i></button>
+										<div class="value">0<span>%</span></div>
+									</div>
+									<div class="range-slider">
+									    <input class="input-range" orient="vertical" type="range" step="0.5" value="5" min="1" max="10">
+									    <span class="range-value"></span>
+									</div>
+								</div>
+								<div class="block">
+									<label for="">contrast</label>
+									<div class="ranger-value">
+										<button type="button"><i class="icon-minus"></i></button>
+										<button type="button"><i class="icon-plus"></i></button>
+										<div class="value">0<span>%</span></div>
+									</div>
+									<div class="range-slider">
+									    <input class="input-range" orient="vertical" type="range" step="0.5" value="5" min="1" max="10">
+									    <span class="range-value"></span>
+									</div>
+								</div>
+								<div class="block">
+									<label for="">highlights</label>
+									<div class="ranger-value">
+										<button type="button"><i class="icon-minus"></i></button>
+										<button type="button"><i class="icon-plus"></i></button>
+										<div class="value">0<span>%</span></div>
+									</div>
+									<div class="range-slider">
+									    <input class="input-range" orient="vertical" type="range" step="0.5" value="5" min="1" max="10">
+									    <span class="range-value"></span>
+									</div>
+								</div>
+								<div class="block">
+									<label for="">shadows</label>
+									<div class="ranger-value">
+										<button type="button"><i class="icon-minus"></i></button>
+										<button type="button"><i class="icon-plus"></i></button>
+										<div class="value">0<span>%</span></div>
+									</div>
+									<div class="range-slider">
+									    <input class="input-range" orient="vertical" type="range" step="0.5" value="5" min="1" max="10">
+									    <span class="range-value"></span>
+									</div>
+								</div>
+								<div class="save-change">
+									<button type="button">
+										<i class="icon-cancel1"></i>
+										<span>Cancle</span>
+									</button>
+									<button type="button" class="">
+										<i class="icon-check-circle"></i>
+										<span>Save</span>
+									</button>
+								</div>
+							</div>
+		                </div>
+					</li>
+					<li class="accordion-row">
+						<div class="box-header" id="heading5">
+		                    <a href="javascript:void(0);" class="collapsed" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+		                        <i class="icon-format_color_fill"></i>
+								color saturation
+		                    </a>
+		                </div>
+		                <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordion">
+		                	<div class="collapsebox">
+								<div class="block">
+									<label for="">Hue</label>
+									<div class="ranger-value">
+										<button type="button"><i class="icon-minus"></i></button>
+										<button type="button"><i class="icon-plus"></i></button>
+										<div class="value">0<span>%</span></div>
+									</div>
+									<div class="range-slider">
+									    <input class="input-range" orient="vertical" type="range" step="0.5" value="5" min="1" max="10">
+									    <span class="range-value"></span>
+									</div>
+								</div>
+								<div class="block">
+									<label for="">Saturation</label>
+									<div class="ranger-value">
+										<button type="button"><i class="icon-minus"></i></button>
+										<button type="button"><i class="icon-plus"></i></button>
+										<div class="value">0<span>%</span></div>
+									</div>
+									<div class="range-slider">
+									    <input class="input-range" orient="vertical" type="range" step="0.5" value="5" min="1" max="10">
+									    <span class="range-value"></span>
+									</div>
+								</div>
+								<div class="block">
+									<label for="">temperature</label>
+									<div class="ranger-value">
+										<button type="button"><i class="icon-minus"></i></button>
+										<button type="button"><i class="icon-plus"></i></button>
+										<div class="value">0<span>%</span></div>
+									</div>
+									<div class="range-slider">
+									    <input class="input-range" orient="vertical" type="range" step="0.5" value="5" min="1" max="10">
+									    <span class="range-value"></span>
+									</div>
+								</div>
+								<div class="save-change">
+									<button type="button">
+										<i class="icon-cancel1"></i>
+										<span>Cancle</span>
+									</button>
+									<button type="button" class="">
+										<i class="icon-check-circle"></i>
+										<span>Save</span>
+									</button>
+								</div>
+							</div>
+		                </div>
+					</li>
+					<li class="accordion-row">
+						<div class="box-header" id="heading6">
+		                    <a href="javascript:void(0);" class="collapsed" type="button" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+		                    	<i class="icon-sun1"></i>
+								Sharpen
+		                    </a>
+		                </div>
+		                <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordion">
+		                	<div class="collapsebox">
+								<div class="block">
+									<label for="">Sharpness</label>
+									<div class="ranger-value">
+										<button type="button"><i class="icon-plus"></i></button>
+										<button type="button"><i class="icon-minus"></i></button>
+										<div class="value">0<span>%</span></div>
+									</div>
+									<div class="range-slider">
+									    <input class="input-range" orient="vertical" type="range" step="0.5" value="5" min="1" max="10">
+									    <span class="range-value"></span>
+									</div>
+								</div>
+							</div>
+		                </div>
+					</li>
+					<li class="accordion-row">
+						<div class="box-header" id="heading7">
+		                    <a href="javascript:void(0);" class="collapsed" type="button" data-toggle="collapse" data-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+		                        <i class="icon-eraser"></i>
+								Erase
+		                    </a>
+		                </div>
+		                <div id="collapse7" class="collapse" aria-labelledby="heading7" data-parent="#accordion">
+		                	<div class="collapsebox">
+			                	<label>Brush Shape</label>
+			                	<ul class="rotate">
+			                		<li>
+			                			<button type="button" data-toggle="tooltip" data-placement="top" title="Circle Brush">
+											<i class="icon-radio-unchecked"></i>
+										</button>
+			                		</li>
+			                		<li>
+			                			<button type="button" data-toggle="tooltip" data-placement="top" title="Square Brush">
+											<i class="icon-checkbox-unchecked"></i>
+										</button>
+			                		</li>
+			                	</ul>
+								<div class="block">
+									<label for="">Brush Size</label>
+									<div class="ranger-value">
+										<button type="button"><i class="icon-plus"></i></button>
+										<button type="button"><i class="icon-minus"></i></button>
+										<div class="value">0<span>%</span></div>
+									</div>
+									<div class="range-slider">
+									    <input class="input-range" orient="vertical" type="range" step="0.5" value="5" min="1" max="10">
+									    <span class="range-value"></span>
+									</div>
+								</div>
+							</div>
+		                </div>
+					</li>
+					<li class="accordion-row">
+						<div class="box-header" id="heading8">
+		                    <a href="javascript:void(0);" class="collapsed" type="button" data-toggle="collapse" data-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+		                        <i class="icon-history"></i>
+								Restore
+		                    </a>
+		                </div>
+		                <div id="collapse8" class="collapse" aria-labelledby="heading8" data-parent="#accordion">
+		                	<div class="collapsebox">
+		                		<label>Brush Shape</label>
+			                	<ul class="rotate">
+			                		<li>
+			                			<button type="button" data-toggle="tooltip" data-placement="top" title="Circle Brush">
+											<i class="icon-radio-unchecked"></i>
+										</button>
+			                		</li>
+			                		<li>
+			                			<button type="button" data-toggle="tooltip" data-placement="top" title="Square Brush">
+											<i class="icon-checkbox-unchecked"></i>
+										</button>
+			                		</li>
+			                	</ul>
+								<div class="block">
+									<label for="">Brush Size</label>
+									<div class="ranger-value">
+										<button type="button"><i class="icon-plus"></i></button>
+										<button type="button"><i class="icon-minus"></i></button>
+										<div class="value">0<span>%</span></div>
+									</div>
+									<div class="range-slider">
+									    <input class="input-range" orient="vertical" type="range" step="0.5" value="5" min="1" max="10">
+									    <span class="range-value"></span>
+									</div>
+								</div>
+							</div>
+		                </div>
+					</li>
+				</ul>
+				<span class="closeTarget"><i class="icon-circle-with-cross"></i></span>
+			</div>
+
+			<!-- Bg Image -->
+			<div id="div2" class="targetDiv bgImage">
+				<div class="btn-group dropdown">
+					<button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Facebook 1080 x 1080px
+					</button>
+					<div class="dropdown-menu">
+						<a href="javascript:void(0);" title="">Nature</a>
+						<a href="javascript:void(0);" title="">Human</a>
+						<a href="javascript:void(0);" title="">Animals</a>
+						<a href="javascript:void(0);" title="">Car</a>
+						<a href="javascript:void(0);" title="">Products</a>
+					</div>
+				</div>
+				<ul>
+					<li><button type="button"><img src="images/thumbnails/editor-image-1.jpg" alt=""></button></li>
+					<li><button type="button"><img src="images/thumbnails/editor-image-1.jpg" alt=""></button></li>
+					<li><button type="button"><img src="images/thumbnails/editor-image-1.jpg" alt=""></button></li>
+					<li><button type="button"><img src="images/thumbnails/editor-image-1.jpg" alt=""></button></li>
+					<li><button type="button"><img src="images/thumbnails/editor-image-1.jpg" alt=""></button></li>
+					<li><button type="button"><img src="images/thumbnails/editor-image-1.jpg" alt=""></button></li>
+					<li><button type="button"><img src="images/thumbnails/editor-image-1.jpg" alt=""></button></li>
+					<li><button type="button"><img src="images/thumbnails/editor-image-1.jpg" alt=""></button></li>
+					<li><button type="button"><img src="images/thumbnails/editor-image-1.jpg" alt=""></button></li>
+					<li><button type="button"><img src="images/thumbnails/editor-image-1.jpg" alt=""></button></li>
+					<li><button type="button"><img src="images/thumbnails/editor-image-1.jpg" alt=""></button></li>
+					<li><button type="button"><img src="images/thumbnails/editor-image-1.jpg" alt=""></button></li>
+					<li><button type="button"><img src="images/thumbnails/editor-image-1.jpg" alt=""></button></li>
+					<li><button type="button"><img src="images/thumbnails/editor-image-1.jpg" alt=""></button></li>
+					<li><button type="button"><img src="images/thumbnails/editor-image-1.jpg" alt=""></button></li>
+					<li><button type="button"><img src="images/thumbnails/editor-image-1.jpg" alt=""></button></li>
+					<li><button type="button"><img src="images/thumbnails/editor-image-1.jpg" alt=""></button></li>
+					<li><button type="button"><img src="images/thumbnails/editor-image-1.jpg" alt=""></button></li>
+					<li><button type="button"><img src="images/thumbnails/editor-image-1.jpg" alt=""></button></li>
+					<li><button type="button"><img src="images/thumbnails/editor-image-1.jpg" alt=""></button></li>
+				</ul>
+				<span class="closeTarget"><i class="icon-circle-with-cross"></i></span>
+			</div>
+
+			<!-- Bg Color -->
+			<div id="div3" class="targetDiv add-background">
+				<div class="upload-image">
+					<input type="color" id="" name="color" pattern="" value="#0069d9"> 
+					<span>Choose color</span>
+				</div>
+				<ul>
+					<li>
+                        <button type="button"></button>
+                    </li>
+                    <li>
+                        <button type="button"></button>
+                    </li>
+                    <li>
+                        <button type="button"></button>
+                    </li>
+                    <li>
+                        <button type="button"></button>
+                    </li>
+                    <li>
+                        <button type="button"></button>
+                    </li>
+                    <li>
+                        <button type="button"></button>
+                    </li>
+                    <li>
+                        <button type="button"></button>
+                    </li>
+                    <li>
+                        <button type="button"></button>
+                    </li>
+                    <li>
+                        <button type="button"></button>
+                    </li>
+                    <li>
+                        <button type="button"></button>
+                    </li>
+                    <li>
+                        <button type="button"></button>
+                    </li>
+                    <li>
+                        <button type="button"></button>
+                    </li>
+                    <li>
+                        <button type="button"></button>
+                    </li>
+                    <li>
+                        <button type="button"></button>
+                    </li>
+                    <li>
+                        <button type="button"></button>
+                    </li>
+                    <li>
+                        <button type="button"></button>
+                    </li>
+                    <li>
+                        <button type="button"></button>
+                    </li>
+                    <li>
+                        <button type="button"></button>
+                    </li>
+                    <li>
+                        <button type="button"></button>
+                    </li>
+                    <li>
+                        <button type="button"></button>
+                    </li>
+				</ul>
+				<span class="closeTarget"><i class="icon-circle-with-cross"></i></span>
+			</div>
+
+			<!-- Text -->
+			<div id="div4" class="targetDiv add-text">
+				<div class="get-option">
+					<!-- <textarea name="" id="" cols="" rows="" placeholder="Enter Text"></textarea> -->
+					<input type="text" name="" id="" placeholder="Enter Text">
+					<label for="">text Properties</label>
+					<ul>
+						<li>
+							<select name="" id="">
+								<option value="">Open Sans</option>
+								<option value="">Lato</option>
+								<option value="">Poppins</option>
+							</select>
+						</li>
+						<li>
+							<select name="" id="">
+								<option value="">Font Size</option>
+								<option value="">6px</option>
+								<option value="">8px</option>
+								<option value="">10px</option>
+							</select>
+						</li>
+						<li>
+							<select name="" id="">
+								<option value="">Line Height</option>
+								<option value="">6px</option>
+								<option value="">8px</option>
+								<option value="">10px</option>
+							</select>
+						</li>
+						<li>
+							<select name="" id="">
+								<option value="">Regular</option>
+								<option value="">Medium</option>
+								<option value="">Bold</option>
+							</select>
+						</li>
+						<li>
+							<select name="" id="">
+								<option value="">Sharp</option>
+								<option value="">Strong</option>
+								<option value="">Smooth</option>
+							</select>
+						</li>
+						<li>
+							<input type="color" name="" id="" value="#008eff">
+						</li>
+						<li>
+							<button type="button" data-toggle="tooltip" data-placement="top" title="Font Bold">
+								<i class="icon-bold"></i>
+							</button>
+							<button type="button" data-toggle="tooltip" data-placement="top" title="Font Italic">
+								<i class="icon-italic"></i>
+							</button>
+							<button type="button" data-toggle="tooltip" data-placement="top" title="Text Underline">
+								<i class="icon-underline"></i>
+							</button>
+							<button type="button" data-toggle="tooltip" data-placement="top" title="Text align Left">
+								<i class="icon-align-left"></i>
+							</button>
+							<button type="button" data-toggle="tooltip" data-placement="top" title="Text align center">
+								<i class="icon-align-center"></i>
+							</button>
+							<button type="button" data-toggle="tooltip" data-placement="top" title="Text align right">
+								<i class="icon-align-right"></i>
+							</button>
+						</li>
+					</ul>
+				</div>
+				<span class="closeTarget"><i class="icon-circle-with-cross"></i></span>
+			</div>
+
+			<!-- Templates -->
+			<div id="div5" class="targetDiv templates">
+				<div class="count-div">
+					<ul>
+						<li><button type="button"><img src="images/templates/instagram.jpg" alt=""></button></li>
+						<li><button type="button"><img src="images/templates/youtube.jpg" alt=""></button></li>
+						<li><button type="button"><img src="images/templates/instagram.jpg" alt=""></button></li>
+						<li><button type="button"><img src="images/templates/youtube.jpg" alt=""></button></li>
+						<li><button type="button"><img src="images/templates/instagram.jpg" alt=""></button></li>
+						<li><button type="button"><img src="images/templates/youtube.jpg" alt=""></button></li>
+						<li><button type="button"><img src="images/templates/instagram.jpg" alt=""></button></li>
+						<li><button type="button"><img src="images/templates/youtube.jpg" alt=""></button></li>
+						<li><button type="button"><img src="images/templates/instagram.jpg" alt=""></button></li>
+						<li><button type="button"><img src="images/templates/youtube.jpg" alt=""></button></li>
+						<li><button type="button"><img src="images/templates/instagram.jpg" alt=""></button></li>
+						<li><button type="button"><img src="images/templates/youtube.jpg" alt=""></button></li>
+						<li><button type="button"><img src="images/templates/instagram.jpg" alt=""></button></li>
+						<li><button type="button"><img src="images/templates/youtube.jpg" alt=""></button></li>
+					</ul>
+				</div>
+				<span class="closeTarget"><i class="icon-circle-with-cross"></i></span>
+			</div>
+
+			<!-- Blur -->
+			<div id="div6" class="targetDiv mscroller add-background blur">
+				<div class="upload-image">
+					<div class="range-slider">
+					    <input class="input-range" orient="vertical" type="range" step="0.5" value="5" min="1" max="10">
+					    <span class="range-value"></span>
+					</div>
+				</div>
+				<ul>
+					<li>
+						<button type="button" style="background-image: url('images/thumbnails/editor-image-1.jpg')"></button>
+					</li>
+					<li>
+						<button type="button" style="background-image: url('images/thumbnails/editor-image-1.jpg')"></button>
+					</li>
+					<li>
+						<button type="button" style="background-image: url('images/thumbnails/editor-image-1.jpg')"></button>
+					</li>
+					<li>
+						<button type="button" style="background-image: url('images/thumbnails/editor-image-1.jpg')"></button>
+					</li>
+					<li>
+						<button type="button" style="background-image: url('images/thumbnails/editor-image-1.jpg')"></button>
+					</li>
+					<li>
+						<button type="button" style="background-image: url('images/thumbnails/editor-image-1.jpg')"></button>
+					</li>
+				</ul>
+				<span class="closeTarget"><i class="icon-circle-with-cross"></i></span>
+			</div>
+
+			<!-- Effects -->
+			<div id="div7" class="targetDiv mscroller add-effects">
+				<div class="effectsdiv">
+					<ul>
+						<li>
+							<button type="button">
+								<img src="images/thumbnails/editor-image-6.jpg" alt="">
+								<span>Oroginal</span>
+							</button>
+						</li>
+						<li>
+							<button type="button">
+								<img src="images/thumbnails/editor-image-6.jpg" alt="">
+								<span>Matches</span>
+							</button>
+						</li>
+						<li>
+							<button type="button">
+								<img src="images/thumbnails/editor-image-6.jpg" alt="">
+								<span>Autumn</span>
+							</button>
+						</li>
+						<li>
+							<button type="button">
+								<img src="images/thumbnails/editor-image-6.jpg" alt="">
+								<span>Lime</span>
+							</button>
+						</li>
+						<li>
+							<button type="button">
+								<img src="images/thumbnails/editor-image-6.jpg" alt="">
+								<span>Letter</span>
+							</button>
+						</li>
+						<li>
+							<button type="button">
+								<img src="images/thumbnails/editor-image-6.jpg" alt="">
+								<span>Chunking</span>
+							</button>
+						</li>
+						<li>
+							<button type="button">
+								<img src="images/thumbnails/editor-image-6.jpg" alt="">
+								<span>Black coffee</span>
+							</button>
+						</li>
+						<li>
+							<button type="button">
+								<img src="images/thumbnails/editor-image-6.jpg" alt="">
+								<span>Mousse</span>
+							</button>
+						</li>
+						<li>
+							<button type="button">
+								<img src="images/thumbnails/editor-image-6.jpg" alt="">
+								<span>Grapefruit</span>
+							</button>
+						</li>
+						<li>
+							<button type="button">
+								<img src="images/thumbnails/editor-image-6.jpg" alt="">
+								<span>Puff</span>
+							</button>
+						</li>
+						<li>
+							<button type="button">
+								<img src="images/thumbnails/editor-image-6.jpg" alt="">
+								<span>Blueberry</span>
+							</button>
+						</li>
+						<li>
+							<button type="button">
+								<img src="images/thumbnails/editor-image-6.jpg" alt="">
+								<span>cheese</span>
+							</button>
+						</li>
+						<li>
+							<button type="button">
+								<img src="images/thumbnails/editor-image-6.jpg" alt="">
+								<span>Fantasy Castle</span>
+							</button>
+						</li>
+						<li>
+							<button type="button">
+								<img src="images/thumbnails/editor-image-6.jpg" alt="">
+								<span>Cranberry</span>
+							</button>
+						</li>
+					</ul>
+				</div>
+				<span class="closeTarget"><i class="icon-circle-with-cross"></i></span>
+			</div>
+
+			<!-- Artsy Options -->
+			<div id="div8" class="targetDiv mscroller add-effects">
+				<div class="effectsdiv">
+					<ul>
+						<li>
+							<button type="button">
+								<img src="images/thumbnails/editor-image-6.jpg" alt="">
+								<span>oil Painting</span>
+							</button>
+						</li>
+						<li>
+							<button type="button">
+								<img src="images/thumbnails/editor-image-6.jpg" alt="">
+								<span>Sketch</span>
+							</button>
+						</li>
+						<li>
+							<button type="button">
+								<img src="images/thumbnails/editor-image-6.jpg" alt="">
+								<span>Water Color</span>
+							</button>
+						</li>
+						<li>
+							<button type="button">
+								<img src="images/thumbnails/editor-image-6.jpg" alt="">
+								<span>Cartoonizer</span>
+							</button>
+						</li>
+					</ul>
+				</div>
+				<span class="closeTarget"><i class="icon-circle-with-cross"></i></span>
+			</div>
+
+			<!-- Add Logo -->
+			<div id="div9" class="targetDiv add-background">
+				<div class="upload-image">
+					<div class="upload-symbols">
+						<label for="">
+							upload symbol
+							<input type="file" name="">
+						</label>
+					</div>
+				</div>
+				<ul>
+					<li>
+                        <button type="button">
+                        	<img src="images/logo/logo-demo-1.jpg" alt="">
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button">
+                        	<img src="images/logo/logo-demo-1.jpg" alt="">
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button">
+                        	<img src="images/logo/logo-demo-1.jpg" alt="">
+                        </button>
+                    </li><li>
+                        <button type="button">
+                        	<img src="images/logo/logo-demo-1.jpg" alt="">
+                        </button>
+                    </li><li>
+                        <button type="button">
+                        	<img src="images/logo/logo-demo-1.jpg" alt="">
+                        </button>
+                    </li><li>
+                        <button type="button">
+                        	<img src="images/logo/logo-demo-1.jpg" alt="">
+                        </button>
+                    </li><li>
+                        <button type="button">
+                        	<img src="images/logo/logo-demo-1.jpg" alt="">
+                        </button>
+                    </li>
+				</ul>
+				<span class="closeTarget"><i class="icon-circle-with-cross"></i></span>
+			</div>
+
+			<!-- Frames -->
+			<div id="div10" class="targetDiv templates">
+				<div class="count-div">
+					<ul>
+						<li><button type="button"><img src="images/frames/frem-1.png" alt=""></button></li>
+						<li><button type="button"><img src="images/frames/frem-3.png" alt=""></button></li>
+						<li><button type="button"><img src="images/frames/frem-2.png" alt=""></button></li>
+						<li><button type="button"><img src="images/frames/frem-1.png" alt=""></button></li>
+						<li><button type="button"><img src="images/frames/frem-3.png" alt=""></button></li>
+						<li><button type="button"><img src="images/frames/frem-2.png" alt=""></button></li>
+						<li><button type="button"><img src="images/frames/frem-3.png" alt=""></button></li>
+						<li><button type="button"><img src="images/frames/frem-1.png" alt=""></button></li>
+						<li><button type="button"><img src="images/frames/frem-3.png" alt=""></button></li>
+						<li><button type="button"><img src="images/frames/frem-2.png" alt=""></button></li>
+						<li><button type="button"><img src="images/frames/frem-3.png" alt=""></button></li>
+						<li><button type="button"><img src="images/frames/frem-1.png" alt=""></button></li>
+						<li><button type="button"><img src="images/frames/frem-2.png" alt=""></button></li>
+						<li><button type="button"><img src="images/frames/frem-3.png" alt=""></button></li>
+					</ul>
+				</div>
+				<span class="closeTarget"><i class="icon-circle-with-cross"></i></span>
+			</div>
+
+			<div class="editer-main-area"></div>
+		</div>
+
+		<!-- Bottom Ber -->
+		<div class="bottomBer">
+			<ul>
+				<li>
+					<p>credits left:<span>200</span></p>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<button type="button" data-toggle="tooltip" data-placement="bottom" title="Zoom Out">
+						<i class="icon-minus-outline"></i>
+					</button>
+					<div class="btn-group dropdown">
+						<button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							100%
+						</button>
+						<div class="dropdown-menu">
+							<input type="text" name="">
+							<a href="javascript:void(0);" title="">100%</a>
+							<a href="javascript:void(0);" title="">25%</a>
+							<a href="javascript:void(0);" title="">50%</a>
+							<a href="javascript:void(0);" title="">75%</a>
+							<a href="javascript:void(0);" title="">200%</a>
+							<a href="javascript:void(0);" title="">400%</a>
+							<a href="javascript:void(0);" title="">800%</a>
+							<a href="javascript:void(0);" title="">1600%</a>
+						</div>
+					</div>
+					<button type="button" data-toggle="tooltip" data-placement="bottom" title="Zoom In">
+						<i class="icon-plus-circle"></i>
+					</button>
+				</li>
+				<li>
+					<div data-toggle="tooltip" data-placement="top" title="Layers">
+						<button href="#layers" data-backdrop="false" data-toggle="modal">
+							<i class="icon-layers"></i>
+						</button>
+					</div>
+				</li>
+				<li>
+					<button type="button" data-toggle="tooltip" data-placement="top" title="Full Screen">
+						<i class="icon-screen-full"></i>
+					</button>
+				</li>
+				<li>
+					<button type="button" data-toggle="tooltip" data-placement="top" title="Fit to Screen">
+						<i class="icon-copy"></i>
+					</button>
+				</li>
+				<li>
+					<button type="button" data-toggle="tooltip" data-placement="top" title="Undo">
+						<i class="icon-corner-up-left"></i>
+					</button>
+					<button type="button" data-toggle="tooltip" data-placement="top" title="Redo">
+						<i class="icon-corner-up-right"></i>
+					</button>
+				</li>
+				<li>
+					<button type="button" data-toggle="tooltip" data-placement="top" title="reset">
+						<i class="icon-repeat"></i>
+					</button>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<button type="button" class="">
+						<i class="icon-share"></i>
+						<span>share</span>
+					</button>
+				</li>
+				<li>
+					<button type="button" class="btn btn-blue">
+						<i class="icon-download2"></i>
+						<span>download</span>
+					</button>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+	<!-- Dragable Popup One / Layers -->
+	<div id="layers" class="modal fade dragablePopup">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">layers</h4>
+					<button type="button" class="close" data-dismiss="modal">
+						<i class="icon-circle-with-cross"></i>
+					</button>
+				</div>
+				<div class="modal-body">
+					<ol>
+						<li class="active"><img src="images/transparent-bg.jpg" alt="">text layers</li>
+						<li><img src="images/transparent-bg.jpg" alt="">Image layers</li>
+					</ol>
+					<div class="delete">
+						<a href="javascript:void(0);" title=""><i class="icon-trash-o"></i></a>
+					</div>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+
+	<!-- Dragable Popup Four / Resize -->
+	<div id="window" class="modal fade dragablePopup">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Custom Window</h4>
+					<button type="button" class="close" data-dismiss="modal">
+						<i class="icon-circle-with-cross"></i>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="crop">
+						<ul class="two-column">
+							<li>
+								<label for="">Width(px)</label>
+								<input type="number" name="" value="900">
+							</li>
+							<li>
+								<label for="">Height(px)</label>
+								<input type="number" name="" value="600">
+							</li>
+						</ul>
+					</div>
+					<div class="save-change">
+						<button type="button">
+							<i class="icon-cancel1"></i>Cancle
+						</button>
+						<button type="button" class="">
+							<i class="icon-check-circle"></i>Save
+						</button>
+					</div>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+
+	<!-- Jquery Library -->
+	<script type="text/javascript" src="js/jquery-2.2.4.js"></script>
+	<!-- Bootstrap -->
+	<script type="text/javascript" src="js/popper.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<!-- mCustom Scrollber -->
+	<script type="text/javascript" src="js/mCustomScrollber.js"></script>
+	<!-- JQuery UI -->
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<!-- Custom Jquery -->
+	<script type="text/javascript" src="js/function.js"></script>
+</body>
+</html>
