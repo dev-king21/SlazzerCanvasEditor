@@ -751,7 +751,12 @@ class ImageMapEditor extends Component {
 								zoomRatio={zoomRatio}
 							/>
 						</div> */}
-						<div>Downloads</div>
+						<div>
+							<div>
+								
+							</div>
+							<div>Downloads</div>
+						</div>
 					</div>
 					<div
 						ref={c => {

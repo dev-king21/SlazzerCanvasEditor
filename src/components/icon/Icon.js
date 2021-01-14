@@ -20,7 +20,7 @@ class Icon extends Component {
         name: null,
         color: '',
         className: '',
-        size: 1,
+        size: 18,
         innerIcon: null,
         innerColor: '',
         innerClassName: '',
@@ -31,7 +31,7 @@ class Icon extends Component {
     getIconHtml = (prefix, name, className, size, color) => {
         const iconClassName = `icon-${name} ${className}`;
         const iconStyle = Object.assign({}, this.props.style, {
-            fontSize: `${size}em`,
+            fontSize: `${size}px`,
             color,
         });
         return (<i className={iconClassName} style={iconStyle} onClick={this.props.onClick} />);
