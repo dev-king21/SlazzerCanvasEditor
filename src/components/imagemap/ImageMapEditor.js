@@ -717,22 +717,21 @@ class ImageMapEditor extends Component {
 		);
 		const titleContent = (
 			<React.Fragment>
-				<img src="images/logo.svg"></img>
+				<img src="images/white-logo.png"></img>
 			</React.Fragment>
 		);
 
-		const zoomButton = (
-				<ImageMapFooterToolbar
-					canvasRef={this.canvasRef}
-					preview={preview}
-					onChangePreview={onChangePreview}
-					zoomRatio={zoomRatio}
-				/>
+		// const zoomButton = (
+		// 		<ImageMapFooterToolbar
+		// 			canvasRef={this.canvasRef}
+		// 			preview={preview}
+		// 			onChangePreview={onChangePreview}
+		// 			zoomRatio={zoomRatio}
+		// 		/>
 			
-		);
-		console.log("zoom1", zoomButton);
+		// );
 
-		const title = <ImageMapTitle title={titleContent} zoomButton={zoomButton} action={action} >
+		const title = <ImageMapTitle title={titleContent} action={action} >
 			</ImageMapTitle>;
 
 		
@@ -780,6 +779,14 @@ class ImageMapEditor extends Component {
 							keyEvent={{
 								transaction: true,
 							}}
+						/>
+					</div>
+					<div className="rde-editor-footer-toolbar">
+						<ImageMapFooterToolbar
+							canvasRef={this.canvasRef}
+							preview={preview}
+							onChangePreview={onChangePreview}
+							zoomRatio={zoomRatio}
 						/>
 					</div>
 				</div>

@@ -91,7 +91,7 @@ class ImageMapFooterToolbar extends Component {
 		const zoomValue = parseInt((zoomRatio * 100).toFixed(2), 10);
 		return (
 			<React.Fragment>
-				{/* <div className="rde-editor-footer-toolbar-interaction">
+				<div className="rde-editor-footer-toolbar-interaction">
 					<Button.Group>
 						<CommonButton
 							type={interactionMode === 'selection' ? 'primary' : 'default'}
@@ -112,7 +112,7 @@ class ImageMapFooterToolbar extends Component {
 							icon="hand-rock"
 						/>
 					</Button.Group>
-				</div> */}
+				</div>
 				<div className="rde-editor-footer-toolbar-zoom">
 					<Button.Group>
 						<CommonButton
@@ -124,6 +124,14 @@ class ImageMapFooterToolbar extends Component {
 							tooltipTitle={i18n.t('action.zoom-out')}
 						/>
 						<CommonButton
+							onClick={() => {
+								canvasRef.handler.zoomHandler.zoomOneToOne();
+							}}
+							tooltipTitle={i18n.t('action.one-to-one')}
+						>
+							{`${zoomValue}%`}
+						</CommonButton>
+						<CommonButton
 							style={{ borderWidth: '0px' }}
 							onClick={() => {
 								canvasRef.handler.zoomHandler.zoomIn();
@@ -131,23 +139,7 @@ class ImageMapFooterToolbar extends Component {
 							icon="search-plus"
 							tooltipTitle={i18n.t('action.zoom-in')}
 						/>
-						{/* <CommonButton
-							onClick={() => {
-								canvasRef.handler.zoomHandler.zoomOneToOne();
-							}}
-							tooltipTitle={i18n.t('action.one-to-one')}
-						>
-							{`${zoomValue}%`}
-						</CommonButton> */}
-						<CommonButton
-							style = {{ borderWidth: '0px'}}
-							onClick={() => {
-								canvasRef.handler.zoomHandler.zoomOneToOne();
-							}}
-							tooltipTitle={i18n.t('action.one-to-one')}
-						>
-							{"Fit on Screen"}
-						</CommonButton>
+						
 						{/* <CommonButton
 							onClick={() => {
 								canvasRef.handler.zoomHandler.zoomToFit();

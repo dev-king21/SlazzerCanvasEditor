@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import Helmet from 'react-helmet';
 import { Flex } from '../flex';
 
 class ImageMapTitle extends Component {
 	render() {
-		const { title, zoomButton, content, action, children } = this.props;
+		const { title, content, action, children } = this.props;
 		return (
 			children || (
 				<Flex className="rde-content-layout-title" alignItems="center" flexWrap="wrap">
@@ -15,12 +14,6 @@ class ImageMapTitle extends Component {
 							alignItems="center"
 						>
 							{title instanceof String ? <h3>{title}</h3> : title}
-						</Flex>
-					</Flex.Item>
-
-					<Flex.Item flex="auto" className="zoom-title">
-						<Flex className="rde-content-layout-title-content" alignItems="center">
-							{zoomButton}							
 						</Flex>
 					</Flex.Item>
 					
