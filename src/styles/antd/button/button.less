@@ -21,8 +21,33 @@
     padding: 0 !important;
 }
 
-.custom-item-icon {
+.icon-content-box {
     color: white;
+    padding: 10px 5px;
+    margin-bottom: 40px;
+}
+
+.icon-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 5px;
+}
+
+.icon-content:hover {
+    background-color: #333333;
+}
+
+.icon-content i {
+    width: 20px;
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+.icon-content span {
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
 }
 
 @font-face {
@@ -41,7 +66,6 @@
 [class*=" icon-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'icomoon' !important;
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;

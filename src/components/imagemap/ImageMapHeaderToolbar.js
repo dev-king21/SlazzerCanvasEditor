@@ -18,11 +18,19 @@ class ImageMapHeaderToolbar extends Component {
 		const isCropping = canvasRef ? canvasRef.handler?.interactionMode === 'crop' : false;
 		return (
 			<Flex className="rde-editor-header-toolbar-container" flex="1">
+				<Flex.Item className="rde-canvas-toolbar rde-canvas-toolbar-alignment">
+					<CommonButton
+						className="rde-action-btn"
+						shape="circle"
+						icon="layers"
+						tooltipTitle={i18n.t('action.canvas-list')}
+					/>
+				</Flex.Item>
 				<Flex.Item className="rde-canvas-toolbar rde-canvas-toolbar-list">
 					<CommonButton
 						className="rde-action-btn"
 						shape="circle"
-						icon="layer-group"
+						icon="screen-full"
 						tooltipTitle={i18n.t('action.canvas-list')}
 					/>
 					<div className="rde-canvas-list">
@@ -30,15 +38,12 @@ class ImageMapHeaderToolbar extends Component {
 					</div>
 				</Flex.Item>
 				<Flex.Item className="rde-canvas-toolbar rde-canvas-toolbar-alignment">
-
-				</Flex.Item>
-				<Flex.Item className="rde-canvas-toolbar rde-canvas-toolbar-alignment">
 					<CommonButton
 						className="rde-action-btn"
 						shape="circle"
 						disabled={isCropping}
 						onClick={() => canvasRef.handler?.duplicate()}
-						icon="clone"
+						icon="copy"
 						tooltipTitle={i18n.t('action.clone')}
 					/>
 				</Flex.Item>
@@ -49,7 +54,7 @@ class ImageMapHeaderToolbar extends Component {
 						// disabled={isCropping || (canvasRef && !canvasRef.handler?.transactionHandler.undos.length)}
 						onClick={() => canvasRef.handler?.transactionHandler.undo()}
 					>
-						<Icon name="undo-alt"/>
+						<Icon name="corner-up-left"/>
 				
 					</CommonButton>
 					<CommonButton
@@ -59,7 +64,7 @@ class ImageMapHeaderToolbar extends Component {
 						onClick={() => canvasRef.handler?.transactionHandler.redo()}
 					>
 				
-						<Icon name="redo-alt" />
+						<Icon name="corner-up-right" />
 					</CommonButton>
 					{/* <CommonButton
 						className="rde-action-btn"
@@ -86,42 +91,16 @@ class ImageMapHeaderToolbar extends Component {
 						tooltipTitle={i18n.t('action.crop-cancel')}
 					/> */}
 				</Flex.Item>
-				{/* <Flex.Item className="rde-canvas-toolbar rde-canvas-toolbar-operation">
+				<Flex.Item className="rde-canvas-toolbar rde-canvas-toolbar-alignment">
 					<CommonButton
 						className="rde-action-btn"
 						shape="circle"
 						disabled={isCropping}
-						onClick={() => canvasRef.handler?.saveImage()}
-						icon="image"
-						tooltipTitle={i18n.t('action.image-save')}
+						onClick={() => canvasRef.handler?.duplicate()}
+						icon="repeat"
+						tooltipTitle={i18n.t('action.clone')}
 					/>
-					<CommonButton
-						className="rde-action-btn"
-						shape="circle"
-						disabled={isCropping}
-						onClick={() => canvasRef.handler?.remove()}
-						icon="trash"
-						tooltipTitle={i18n.t('action.delete')}
-					/>
-				</Flex.Item> */}
-				{/* <Flex.Item className="rde-canvas-toolbar rde-canvas-toolbar-history">
-					<CommonButton
-						className="rde-action-btn"
-						disabled={isCropping || (canvasRef && !canvasRef.handler?.transactionHandler.undos.length)}
-						onClick={() => canvasRef.handler?.transactionHandler.undo()}
-					>
-						<Icon name="undo-alt" style={{ marginRight: 8 }} />
-						Undo
-					</CommonButton>
-					<CommonButton
-						className="rde-action-btn"
-						disabled={isCropping || (canvasRef && !canvasRef.handler?.transactionHandler.redos.length)}
-						onClick={() => canvasRef.handler?.transactionHandler.redo()}
-					>
-						Redo
-						<Icon name="redo-alt" style={{ marginLeft: 8 }} />
-					</CommonButton>
-				</Flex.Item> */}
+				</Flex.Item>
 			</Flex>
 		);
 	}

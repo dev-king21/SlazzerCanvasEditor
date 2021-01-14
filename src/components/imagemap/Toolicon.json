@@ -1,0 +1,117 @@
+[
+		{
+			"name": "Edit",
+			"icon": "params",
+			"option": {
+				"type": "i-text",
+				"text": "\uf3c5",
+				"fontFamily": "icomoon",
+				"fontWeight": 900,
+				"fontSize": 60,
+				"width": 30,
+				"height": 30,
+				"editable": false,
+				"name": "New marker"
+			}
+		},
+		{
+			"name": "Bg Image",
+			"icon": "pictures",
+			"option": {
+				"type": "textbox",
+				"text": "",
+				"width": 60,
+				"height": 30,
+				"fontSize": 32,
+				"name": "New text"
+			}
+		}
+	,
+		{
+			"name": "Bg Color",
+			"icon": "paintbrush",
+			"option": {
+				"type": "image",
+				"name": "New image",
+				"src": "./images/sample/transparentBg.png"
+			}
+		}
+	,
+		{
+			"name": "Text",
+			"icon": "pencil",
+			"option": {
+				"type": "triangle",
+				"width": 30,
+				"height": 30,
+				"name": "New shape"
+			}
+		}
+		
+	,
+		{
+			"name": "Templates",
+			"icon": "diamond",
+			"option": {
+				"type": "polygon",
+				"name": "New polygon"
+			}
+		}
+	,
+		{
+			"name": "Add Blur",
+			"icon": "droplet",
+			"option": {
+				"superType": "element",
+				"type": "chart",
+				"name": "New chart",
+				"width": 356,
+				"height": 356
+			}
+		}
+	,
+		{
+			"name": "Saturation Effects",
+			"icon": "star",
+			"option": {
+				"type": "svg",
+				"superType": "svg",
+				"name": "New SVG",
+				"loadType": "svg"
+			}
+		}
+	,
+		{
+			"name": "Artsy Options",
+			"icon": "heart",
+			"option": {
+				"type": "svg",
+				"superType": "svg",
+				"name": "New SVG",
+				"loadType": "svg"
+			}
+		}
+	,
+		{
+			"name": "Add Logo",
+			"icon": "omega",
+			"option": {
+				"type": "svg",
+				"superType": "svg",
+				"name": "New SVG",
+				"loadType": "svg"
+			}
+		}
+	,
+		{
+			"name": "Frames",
+			"icon": "frame",
+			"option": {
+				"type": "svg",
+				"superType": "svg",
+				"name": "New SVG",
+				"loadType": "svg"
+			}
+		}
+	
+	]

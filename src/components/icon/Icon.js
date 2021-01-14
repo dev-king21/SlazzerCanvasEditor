@@ -29,7 +29,7 @@ class Icon extends Component {
     };
 
     getIconHtml = (prefix, name, className, size, color) => {
-        const iconClassName = `${prefix} fa-${name} ${className}`;
+        const iconClassName = `icon-${name} ${className}`;
         const iconStyle = Object.assign({}, this.props.style, {
             fontSize: `${size}em`,
             color,

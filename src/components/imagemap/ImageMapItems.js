@@ -10,7 +10,8 @@ import Icon from '../icon/Icon';
 import Scrollbar from '../common/Scrollbar';
 import CommonButton from '../common/CommonButton';
 import { SVGModal } from '../common';
-import { div } from 'react-dom-factories';
+import { div, p } from 'react-dom-factories';
+import Icondata from './Toolicon.json';
 
 notification.config({
 	top: 80,
@@ -276,30 +277,27 @@ class ImageMapItems extends Component {
 		const className = classnames('rde-editor-items', {
 			minimize: collapse,
 		});
-	
+		// console.log("proce: ", Icondata.map((key, index) => {
+		// 	{key}
+		// }));
 		return (
 			<div className={className}>
 				<Flex flex="1" flexDirection="column" style={{ height: '100%', background: '#2b2b2b' }}>
 					
 					<Scrollbar>
 						<Flex flex="1" style={{ overflowY: 'hidden' }}>
-								<Collapse
-									style={{ width: '100%', background: '#2b2b2b'}}
-									bordered={false}
-									activeKey={activeKey.length ? activeKey : Object.keys(descriptors)}
-									onChange={this.handlers.onChangeActiveKey}
-								>
-								{Object.keys(descriptors).map(key => (
-									<div>
-										{/* <span>{this.renderIcon(descriptors[key])}</span> */}
-										<Collapse.Panel key={key} header={key} showArrow={false}>
-											{/* {this.renderItems(descriptors[key])} */}
-										</Collapse.Panel>
-										</div>
-										
-							
-								))}
-								</Collapse>
+							<ul className="icon-content-box">
+							{Icondata.map(key => (
+								<li className="icon-content">
+								
+										<i className={`icon-${key.icon}`}></i>
+										<span className="icon-text">{key.name}</span>
+									
+								</li>
+								
+								
+							))}
+							</ul>
 						</Flex>
 					</Scrollbar>
 				</Flex>
