@@ -54,6 +54,7 @@ class App extends Component<any, IState> {
 					<link rel="shortcut icon" href="./favicon.ico" />
 					<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css" />
 					<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+					<link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet"></link>
 					<title>React Design Editor</title>
 					<script async={true} src="https://www.googletagmanager.com/gtag/js?id=UA-97485289-3" />
 					<script>

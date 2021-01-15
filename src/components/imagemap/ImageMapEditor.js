@@ -751,11 +751,15 @@ class ImageMapEditor extends Component {
 								zoomRatio={zoomRatio}
 							/>
 						</div> */}
-						<div>
-							<div>
-								
+						<div className="footer-right-content">
+							<div className="share-box">
+								<i className="icon-share"></i>
+								<span>share</span>
 							</div>
-							<div>Downloads</div>
+							<Button type="primary" className="btn-download">
+								<i className="icon-download2"></i>
+								<span>Download</span>
+							</Button>
 						</div>
 					</div>
 					<div

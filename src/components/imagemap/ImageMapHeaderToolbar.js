@@ -6,6 +6,7 @@ import { Flex } from '../flex';
 import ImageMapList from './ImageMapList';
 import { CommonButton } from '../common';
 import Icon from '../icon/Icon';
+import '../../libs/fontawesome-5.2.0/css/all.css';
 
 class ImageMapHeaderToolbar extends Component {
 	static propTypes = {
@@ -34,6 +35,7 @@ class ImageMapHeaderToolbar extends Component {
 						onClick={() => canvasRef.handler?.duplicate()}
 						tooltipTitle={i18n.t('action.clone')}>
 						<span className="zoomValue">100%</span>
+						{/* <span className="font-awesome"><Icon name="angle-up"/></span> */}
 					</CommonButton>
 					
 					<CommonButton
