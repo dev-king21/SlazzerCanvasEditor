@@ -97,7 +97,12 @@
         "zoom-in": "Zoom in",
         "zoom-out": "Zoom out",
         "one-to-one": "1:1",
+        "undo": "Undo",
+        "redo": "Redo",
+        "reset": "Reset",
+        "fullscreen": "Full screen",
         "fit": "Scale to fit",
+        "fit-to-screen": "Fit to Screen",
         "preview": "Preview",
         "canvas-list": "Canvas list",
         "bring-forward": "Bring forward",
@@ -131,7 +136,8 @@
         "stop": "Stop",
         "execute": "Execute",
         "go-github": "Go Github!!",
-        "go-docs": "Go Documents!!"
+        "go-docs": "Go Documents!!",
+        "layers": "Layers"
     },
     "common": {
         "name": "Name",
@@ -168,7 +174,6 @@
         "layout": "Layout",
         "fixed": "Fixed",
         "responsive": "Responsive",
-        "fullscreen": "Fullscreen",
         "src": "Src",
         "svg": "SVG"
     },

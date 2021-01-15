@@ -10,6 +10,7 @@ import ImageMapHeaderToolbar from './ImageMapHeaderToolbar';
 import ImageMapPreview from './ImageMapPreview';
 import ImageMapConfigurations from './ImageMapConfigurations';
 import SandBox from '../sandbox/SandBox';
+import OptionsBarContainer from './OptionsBarContainer';
 
 import '../../libs/fontawesome-5.2.0/css/all.css';
 import '../../styles/index.less';
@@ -803,13 +804,14 @@ class ImageMapEditor extends Component {
 					styles={styles}
 					dataSources={dataSources}
 				/> */}
-				<ImageMapPreview
+				{/* <ImageMapPreview
 					preview={preview}
 					onChangePreview={onChangePreview}
 					onTooltip={onTooltip}
 					onClick={onClick}
 					objects={objects}
-				/>
+				/> */}
+				<OptionsBarContainer />
 			</div>
 		);
 		return <Container title={title} content={content} loading={loading} className="" />;

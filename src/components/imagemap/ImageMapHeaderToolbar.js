@@ -26,7 +26,7 @@ class ImageMapHeaderToolbar extends Component {
 						disabled={isCropping}
 						onClick={() => canvasRef.handler?.duplicate()}
 						icon="minus-outline"
-						tooltipTitle={i18n.t('action.clone')}
+						tooltipTitle={i18n.t('action.zoom-out')}
 					/>
 					<CommonButton
 						className="rde-action-btn m-footer-2"
@@ -44,7 +44,7 @@ class ImageMapHeaderToolbar extends Component {
 						disabled={isCropping}
 						onClick={() => canvasRef.handler?.duplicate()}
 						icon="plus-circle"
-						tooltipTitle={i18n.t('action.clone')}
+						tooltipTitle={i18n.t('action.zoom-in')}
 					/>
 				</Flex.Item>
 				<Flex.Item className="rde-canvas-toolbar rde-canvas-toolbar-alignment">
@@ -52,7 +52,7 @@ class ImageMapHeaderToolbar extends Component {
 						className="rde-action-btn m-footer-2"
 						shape="circle"
 						icon="layers"
-						tooltipTitle={i18n.t('action.canvas-list')}
+						tooltipTitle={i18n.t('action.layers')}
 					/>
 				</Flex.Item>
 				<Flex.Item className="rde-canvas-toolbar rde-canvas-toolbar-list">
@@ -60,7 +60,7 @@ class ImageMapHeaderToolbar extends Component {
 						className="rde-action-btn m-footer-2"
 						shape="circle"
 						icon="screen-full"
-						tooltipTitle={i18n.t('action.canvas-list')}
+						tooltipTitle={i18n.t('action.fullscreen')}
 					/>
 					<div className="rde-canvas-list">
 						<ImageMapList canvasRef={canvasRef} selectedItem={selectedItem} />
@@ -73,7 +73,7 @@ class ImageMapHeaderToolbar extends Component {
 						disabled={isCropping}
 						onClick={() => canvasRef.handler?.duplicate()}
 						icon="copy"
-						tooltipTitle={i18n.t('action.clone')}
+						tooltipTitle={i18n.t('action.fit-to-screen')}
 					/>
 				</Flex.Item>
 
@@ -83,6 +83,7 @@ class ImageMapHeaderToolbar extends Component {
 						style={{padding: '5px'}}
 						// disabled={isCropping || (canvasRef && !canvasRef.handler?.transactionHandler.undos.length)}
 						onClick={() => canvasRef.handler?.transactionHandler.undo()}
+						tooltipTitle={i18n.t('action.undo')}
 					>
 						<Icon name="corner-up-left"/>
 				
@@ -92,6 +93,7 @@ class ImageMapHeaderToolbar extends Component {
 						style={{padding: '5px'}}
 						// disabled={isCropping || (canvasRef && !canvasRef.handler?.transactionHandler.redos.length)}
 						onClick={() => canvasRef.handler?.transactionHandler.redo()}
+						tooltipTitle={i18n.t('action.redo')}
 					>
 				
 						<Icon name="corner-up-right" />
@@ -105,7 +107,7 @@ class ImageMapHeaderToolbar extends Component {
 						disabled={isCropping}
 						onClick={() => canvasRef.handler?.duplicate()}
 						icon="repeat"
-						tooltipTitle={i18n.t('action.clone')}
+						tooltipTitle={i18n.t('action.reset')}
 					/>
 				</Flex.Item>
 			</Flex>

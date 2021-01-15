@@ -294,8 +294,6 @@ class ImageMapItems extends Component {
 										<span className="icon-text">{key.name}</span>
 									
 								</li>
-								
-								
 							))}
 							</ul>
 						</Flex>
