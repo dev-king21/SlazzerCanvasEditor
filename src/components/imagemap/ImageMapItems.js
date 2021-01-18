@@ -22,6 +22,7 @@ class ImageMapItems extends Component {
 	static propTypes = {
 		canvasRef: PropTypes.any,
 		descriptors: PropTypes.object,
+		setOption: PropTypes.func
 	};
 
 	state = {
@@ -31,6 +32,7 @@ class ImageMapItems extends Component {
 		descriptors: {},
 		filteredDescriptors: [],
 		svgModalVisible: false,
+		imageProcessingOption : undefined
 	};
 
 	componentDidMount() {
@@ -96,6 +98,13 @@ class ImageMapItems extends Component {
 		canvas.canvas.wrapperEl.removeEventListener('drop', this.events.onDrop);
 	};
 
+	onChangeActiveKey = activeKey => {
+		this.setState({
+			activeKey,
+		});
+	};
+
+
 	/* eslint-disable react/sort-comp, react/prop-types */
 	handlers = {
 		onAddItem: (item, centered) => {
@@ -136,6 +145,7 @@ class ImageMapItems extends Component {
 				activeKey,
 			});
 		},
+
 		onCollapse: () => {
 			this.setState({
 				collapse: !this.state.collapse,
@@ -227,59 +237,13 @@ class ImageMapItems extends Component {
 		},
 	};
 
-	renderItems = items => (
-		<Flex flexWrap="wrap" flexDirection="column" style={{ width: '100%' }}>
-			{items.map(item => this.renderItem(item))}
-		</Flex>
-	);
-
-	// renderIcon = icon => (
-	// 	<span>
-	// 		<i className={`icon-${icon.icon.name}`}></i>
-	// 	</span>
-	// );
-
-	
-	renderItem = (item, centered) =>
-		item.type === 'drawing' ? (
-			<div
-				key={item.name}
-				draggable
-				onClick={e => this.handlers.onDrawingItem(item)}
-				className="rde-editor-items-item"
-				style={{ justifyContent: this.state.collapse ? 'center' : null }}
-			>
-				<span className="rde-editor-items-item-icon">
-					<Icon name={item.icon.name} prefix={item.icon.prefix} style={item.icon.style} />
-				</span>
-				{this.state.collapse ? null : <div className="rde-editor-items-item-text">{item.name}</div>}
-			</div>
-		) : (
-			<div
-				key={item.name}
-				draggable
-				onClick={e => this.handlers.onAddItem(item, centered)}
-				onDragStart={e => this.events.onDragStart(e, item)}
-				onDragEnd={e => this.events.onDragEnd(e, item)}
-				className="rde-editor-items-item"
-				style={{ justifyContent: this.state.collapse ? 'center' : null }}
-			>
-				<span className="rde-editor-items-item-icon">
-					<Icon name={item.icon.name} prefix={item.icon.prefix} style={item.icon.style} />
-				</span>
-				{this.state.collapse ? null : <div className="rde-editor-items-item-text">{item.name}</div>}
-			</div>
-		);
-
 	render() {
-		const { descriptors } = this.props;
+		const { descriptors, setOption } = this.props;
 		const { collapse, textSearch, filteredDescriptors, activeKey, svgModalVisible, svgOption } = this.state;
 		const className = classnames('rde-editor-items', {
 			minimize: collapse,
 		});
-		// console.log("proce: ", Icondata.map((key, index) => {
-		// 	{key}
-		// }));
+
 		return (
 			<div className={className}>
 				<Flex flex="1" flexDirection="column" style={{ height: '100%', background: '#2b2b2b' }}>
@@ -288,7 +252,7 @@ class ImageMapItems extends Component {
 						<Flex flex="1" style={{ overflowY: 'hidden' }}>
 							<ul className="icon-content-box">
 							{Icondata.map(key => (
-								<li className="icon-content">
+								<li className="icon-content" onClick={() => setOption(key.name)}>
 								
 										<i className={`icon-${key.icon}`}></i>
 										<span className="icon-text">{key.name}</span>

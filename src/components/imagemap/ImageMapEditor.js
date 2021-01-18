@@ -10,13 +10,14 @@ import ImageMapHeaderToolbar from './ImageMapHeaderToolbar';
 import ImageMapPreview from './ImageMapPreview';
 import ImageMapConfigurations from './ImageMapConfigurations';
 import SandBox from '../sandbox/SandBox';
-import OptionsBarContainer from './OptionsBarContainer';
+import OptionsContainer from './options/options';
 
 import '../../libs/fontawesome-5.2.0/css/all.css';
 import '../../styles/index.less';
 import Container from '../common/Container';
 import CommonButton from '../common/CommonButton';
 import Canvas from '../canvas/Canvas';
+import Previews from './imagedropzone';
 
 const propertiesToInclude = [
 	'id',
@@ -90,6 +91,7 @@ class ImageMapEditor extends Component {
 		editing: false,
 		descriptors: {},
 		objects: undefined,
+		activeImage: undefined
 	};
 
 	componentDidMount() {
@@ -634,9 +636,22 @@ class ImageMapEditor extends Component {
 		});
 	};
 
+	setOption = option => {
+		this.setState({
+			imageProcessingOption: option
+		})
+	}
+	
+	closeOption = () => {
+		this.setState({
+			imageProcessingOption: undefined
+		})
+	}
+
 	render() {
 		const {
 			preview,
+			imageProcessingOption,
 			selectedItem,
 			zoomRatio,
 			loading,
@@ -732,8 +747,11 @@ class ImageMapEditor extends Component {
 					ref={c => {
 						this.itemsRef = c;
 					}}
+					setOption = {this.setOption}
+				
 					canvasRef={this.canvasRef}
 					descriptors={descriptors}
+					
 				/>
 				<div className="rde-editor-canvas-container">
 					<div className="rde-editor-header-toolbar">
@@ -763,55 +781,42 @@ class ImageMapEditor extends Component {
 							</Button>
 						</div>
 					</div>
-					<div
-						ref={c => {
-							this.container = c;
-						}}
-						className="rde-editor-canvas"
-					>
-						<Canvas
-							ref={c => {
-								this.canvasRef = c;
-							}}
-							className="rde-canvas"
-							minZoom={30}
-							maxZoom={500}
-							objectOption={defaultOption}
-							propertiesToInclude={propertiesToInclude}
-							onModified={onModified}
-							onAdd={onAdd}
-							onRemove={onRemove}
-							onSelect={onSelect}
-							onZoom={onZoom}
-							onTooltip={onTooltip}
-							onClick={onClick}
-							onContext={onContext}
-							onTransaction={onTransaction}
-							keyEvent={{
-								transaction: true,
-							}}
-						/>
+					
+					<div className="rde-editor-canvas" >
+						{ !this.state.activeImage ?  <Previews /> : 
+							<div
+								ref={c => {
+									this.container = c;
+								}}
+								className="rde-editor-canvas"
+							> 
+								<Canvas 
+									ref={c => {
+										this.canvasRef = c;
+									}}
+									className="rde-canvas"
+									minZoom={30}
+									maxZoom={500}
+									objectOption={defaultOption}
+									propertiesToInclude={propertiesToInclude}
+									onModified={onModified}
+									onAdd={onAdd}
+									onRemove={onRemove}
+									onSelect={onSelect}
+									onZoom={onZoom}
+									onTooltip={onTooltip}
+									onClick={onClick}
+									onContext={onContext}
+									onTransaction={onTransaction}
+									keyEvent={{
+										transaction: true,
+									}}
+								/>
+							</div>
+						}
 					</div>
 				</div>
-				{/* <ImageMapConfigurations
-					canvasRef={this.canvasRef}
-					onChange={onChange}
-					selectedItem={selectedItem}
-					onChangeAnimations={onChangeAnimations}
-					onChangeStyles={onChangeStyles}
-					onChangeDataSources={onChangeDataSources}
-					animations={animations}
-					styles={styles}
-					dataSources={dataSources}
-				/> */}
-				{/* <ImageMapPreview
-					preview={preview}
-					onChangePreview={onChangePreview}
-					onTooltip={onTooltip}
-					onClick={onClick}
-					objects={objects}
-				/> */}
-				<OptionsBarContainer />
+				{imageProcessingOption && <OptionsContainer imageProcessingOption={imageProcessingOption} closeOption = {this.closeOption} />}
 			</div>
 		);
 		return <Container title={title} content={content} loading={loading} className="" />;

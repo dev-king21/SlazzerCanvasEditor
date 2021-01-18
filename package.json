@@ -69,6 +69,8 @@
 		"react-custom-scrollbars": "^4.2.1",
 		"react-dom": "^16.13.1",
 		"react-dom-factories": "^1.0.2",
+		"react-drop-zone": "^4.2.3",
+		"react-dropzone": "^11.2.4",
 		"react-helmet": "^5.2.0",
 		"react-hot-loader": "^4.12.20",
 		"react-json-view": "^1.19.1",
