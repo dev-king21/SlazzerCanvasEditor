@@ -4,6 +4,7 @@ import { Form, Collapse } from 'antd';
 
 import PropertyDefinition from './PropertyDefinition';
 import Scrollbar from '../../common/Scrollbar';
+import ImageProperty from './ImageProperty';
 
 const { Panel } = Collapse;
 
@@ -23,11 +24,18 @@ class MapProperties extends Component {
 							{Object.keys(PropertyDefinition.map).map(key => {
 								return (
 									<Panel key={key} header={PropertyDefinition.map[key].title} showArrow={showArrow}>
-										{PropertyDefinition.map[key].component.render(
+										{/* {PropertyDefinition.map[key].component.render(
 											canvasRef,
 											form,
 											canvasRef.handler.workarea,
-										)}
+										)} */}
+								
+											ImageProperty.render(
+												canvasRef,
+												form,
+												canvasRef.handler.workarea,
+											)
+										
 									</Panel>
 								);
 							})}

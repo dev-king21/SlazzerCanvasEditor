@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Badge, Button, Popconfirm, Menu } from 'antd';
+import { Badge, Button, Popconfirm, Menu, Form, Collapse } from 'antd';
 import debounce from 'lodash/debounce';
 import i18n from 'i18next';
 
@@ -18,6 +18,7 @@ import Container from '../common/Container';
 import CommonButton from '../common/CommonButton';
 import Canvas from '../canvas/Canvas';
 import Previews from './imagedropzone';
+import ImageDraggerBox from './properties/ImageDraggerBox';
 
 const propertiesToInclude = [
 	'id',
@@ -781,42 +782,52 @@ class ImageMapEditor extends Component {
 							</Button>
 						</div>
 					</div>
+					<div
+						ref={c => {
+							this.container = c;
+						}}
+						className="rde-editor-canvas"
+				> 
+					{/* <Form layout="horizontal">
+						ImageProperty.render(
+							canvasRef,
+							form,
+							canvasRef.handler.workarea,
+						)
+					</Form> */}
+					{/* <div className="rde-editor-configurations">
+						<MapProperties onChange={onChange} canvasRef={this.canvasRef} />
+					</div> */}
+						<div className="dragDropBox">
+							<ImageDraggerBox />
+						</div>
 					
-					<div className="rde-editor-canvas" >
-						{ !this.state.activeImage ?  <Previews /> : 
-							<div
-								ref={c => {
-									this.container = c;
-								}}
-								className="rde-editor-canvas"
-							> 
-								<Canvas 
-									ref={c => {
-										this.canvasRef = c;
-									}}
-									className="rde-canvas"
-									minZoom={30}
-									maxZoom={500}
-									objectOption={defaultOption}
-									propertiesToInclude={propertiesToInclude}
-									onModified={onModified}
-									onAdd={onAdd}
-									onRemove={onRemove}
-									onSelect={onSelect}
-									onZoom={onZoom}
-									onTooltip={onTooltip}
-									onClick={onClick}
-									onContext={onContext}
-									onTransaction={onTransaction}
-									keyEvent={{
-										transaction: true,
-									}}
-								/>
-							</div>
-						}
+						<Canvas 
+							ref={c => {
+								this.canvasRef = c;
+							}}
+							className="rde-canvas"
+							minZoom={30}
+							maxZoom={500}
+							objectOption={defaultOption}
+							propertiesToInclude={propertiesToInclude}
+							onModified={onModified}
+							onAdd={onAdd}
+							onRemove={onRemove}
+							onSelect={onSelect}
+							onZoom={onZoom}
+							onTooltip={onTooltip}
+							onClick={onClick}
+							onContext={onContext}
+							onTransaction={onTransaction}
+							keyEvent={{
+								transaction: true,
+							}}
+						/>
 					</div>
 				</div>
 				{imageProcessingOption && <OptionsContainer imageProcessingOption={imageProcessingOption} closeOption = {this.closeOption} />}
+				
 			</div>
 		);
 		return <Container title={title} content={content} loading={loading} className="" />;

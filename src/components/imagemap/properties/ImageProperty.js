@@ -4,8 +4,9 @@ import i18n from 'i18next';
 
 import UrlModal from '../../common/UrlModal';
 import FileUpload from '../../common/FileUpload';
+import { Component } from 'react';
 
-export default {
+export default class ImageProperty extends Component{
 	render(canvasRef, form, data) {
 		const { getFieldDecorator } = form;
 		if (!data) {
@@ -45,5 +46,5 @@ export default {
 				)}
 			</React.Fragment>
 		);
-	},
+	}
 };

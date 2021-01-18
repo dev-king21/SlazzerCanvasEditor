@@ -77,7 +77,7 @@ class ImageMapTitle extends Component {
 						<Flex className="screenmode" alignItems="center">
 							<span>popular format</span>
 							<div className="resolution-box">
-								<Dropdown overlay={menu} trigger={['click']} icon={<Icon name="angle-up"/>}>
+								<Dropdown overlay={menu} trigger={['click']} >
 									<a className="ant-dropdown-link resolution-dropdown" onClick={e => e.preventDefault()}>
 										Facebook 1080 x 1080px
 									</a>
