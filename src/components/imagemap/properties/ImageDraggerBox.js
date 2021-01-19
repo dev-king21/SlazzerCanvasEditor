@@ -1,113 +1,68 @@
-import { message, Upload } from 'antd';
-import React from 'react';
+import React, {useCallback, useState} from 'react'
+import Dropzone from 'react-dropzone';
+import axios from 'axios';
+import { Form } from 'antd';
 
-const { Dragger } = Upload;
+function ImageDraggerBox(props) {
 
-const props = {
-	name: 'file',
-	multiple: 'true',
-	action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
-	onChange(info) {
-		const { status } = info.file;
-		if (status !== 'uploading') {
-			console.log(info.file, info.fileList);
-		}
+	const { hideFlag, canvasRef } = props
+	console.log("canvasRef    : ", canvasRef);
+	const [dragFlag, setDragFlag] = useState(false)
 
-		if (status === 'done') {
-			message.success(`${info.file.name} file upload successfully.`)
-		} else if (status === 'error') {
-			message.error(`failed`);
-		}
-	}
-	
-}; 
+    const onDrop = (files) => {
+	// POST to a test endpoint for demo purposes
+		const url = 'https://www.slazzer.com/api/v1/remove_image_background';
+		const fData = new FormData();
+		fData.append('source_image_file', files[0]);		
+		axios.post(
+			url,
+			fData,
+			{
+				headers: {
+					'Content-Type': 'multipart/form-data',
+					'API-KEY': '9fd6e94f3dd24659b7961cae090cdac6'
+				}
+			}
+		)
+		.then((res) => {
+			console.log(res);
+			hideFlag();
+				
+			// 	ImageProperty.render(
+			// 		canvasRef,
+			// 		form,
+			// 		canvasRef.handler.workarea,
+			// )
+			
+			const canvas = canvasRef.canvas;
+			console.log("workareaa:  ", canvasRef.handler.workarea)
+			const ctx = canvas.getContext('2d')
+			const img = new Image();
+			img.src = res.data.output_image_url;
+			img.onload = () => {
+				ctx.drawImage(img,0,0,canvas.width, canvas.height)
+			}
+		})
+		.catch(errors => console.log(errors.res.data));;
+  	}
 
-export default function ImageDraggerBox() {
-	return (
-		<Dragger {...props}>
-			<div className="upload-back-img"></div>
-		</Dragger>
-	)
+  return (
+	<Dropzone onDrop={onDrop}>
+		{({getRootProps, getInputProps, isDragActive}) => (
+			<section>
+			<div {...getRootProps()} className="dropImgBox">
+				<input {...getInputProps()} />
+					  <div className="upload-box"><div className={`${isDragActive ? 'upload-back-img-drag-active' : 'upload-back-img '}`}></div></div>
+			</div>
+			</section>
+  		)}
+	</Dropzone>
+  )
 }
 
-
-// import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
-// import { Upload, message } from 'antd';
-
-// const { Dragger } = Upload;
-
-// class ImageDraggerBox extends Component {
-// 	static propTypes = {
-// 		onChange: PropTypes.func,
-// 		limit: PropTypes.number,
-// 		accept: PropTypes.string,
-// 	};
-
-// 	static defaultProps = {
-// 		limit: 5,
-// 	};
-
-// 	state = {
-// 		fileList: this.props.value ? [this.props.value] : [],
-// 	};
-
-// 	UNSAFE_componentWillReceiveProps(nextProps) {
-// 		this.setState({
-// 			fileList: nextProps.value ? [nextProps.value] : [],
-// 		});
-// 	}
-
-// 	render() {
-// 		const { accept, limit } = this.props;
-// 		const { fileList } = this.state;
-// 		const props = {
-// 			accept,
-// 			name: 'file',
-// 			multiple: false,
-// 			onChange: info => {
-// 				const isLimit = info.file.size / 1024 / 1024 < limit;
-// 				if (!isLimit) {
-// 					message.error(`Limited to ${limit}MB or less`);
-// 					return false;
-// 				}
-// 				const { onChange } = this.props;
-// 				onChange(info.file);
-// 			},
-// 			onRemove: file => {
-// 				this.setState(
-// 					({ fileList }) => {
-// 						const index = fileList.indexOf(file);
-// 						const newFileList = fileList.slice();
-// 						newFileList.splice(index, 1);
-// 						return {
-// 							fileList: newFileList,
-// 						};
-// 					},
-// 					() => {
-// 						const { onChange } = this.props;
-// 						onChange(null);
-// 					},
-// 				);
-// 			},
-// 			beforeUpload: file => {
-// 				const isLimit = file.size / 1024 / 1024 < limit;
-// 				if (!isLimit) {
-// 					return false;
-// 				}
-// 				this.setState({
-// 					fileList: [file],
-// 				});
-// 				return false;
-// 			},
-// 			fileList,
-// 		};
-// 		return (
-// 			<Dragger {...props}>
-// 				<div className="upload-back-img"></div>
-// 			</Dragger>
-// 		);
-// 	}
-// }
-
-// export default ImageDraggerBox;
+export default Form.create({
+	onValuesChange: (props, changedValues, allValues) => {
+		const { onChange, selectedItem } = props;
+		onChange(selectedItem, changedValues, { workarea: allValues });
+	},
+})(ImageDraggerBox);

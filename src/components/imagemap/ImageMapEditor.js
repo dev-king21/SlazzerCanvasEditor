@@ -81,20 +81,27 @@ const defaultOption = {
 };
 
 class ImageMapEditor extends Component {
-	state = {
-		selectedItem: null,
-		zoomRatio: 1,
-		preview: false,
-		loading: false,
-		progress: 0,
-		animations: [],
-		styles: [],
-		dataSources: [],
-		editing: false,
-		descriptors: {},
-		objects: undefined,
-		activeImage: undefined
-	};
+	constructor(props) {
+		// Required step: always call the parent class' constructor
+		super(props);
+		this.state = {
+			selectedItem: null,
+			zoomRatio: 1,
+			preview: false,
+			loading: false,
+			progress: 0,
+			animations: [],
+			styles: [],
+			dataSources: [],
+			editing: false,
+			descriptors: {},
+			objects: undefined,
+			activeImage: undefined,
+			canDragging: true,
+			isFlag: true,
+			
+		};
+	}
 
 	componentDidMount() {
 		this.showLoading(true);
@@ -108,11 +115,14 @@ class ImageMapEditor extends Component {
 				},
 			);
 		});
+		console.log('did mount canDragging', this.state.isFlag);
 		this.setState({
 			selectedItem: null,
+			isFlag: true
 		});
 		this.shortcutHandlers.esc();
 	}
+
 
 	canvasHandlers = {
 		onAdd: target => {
@@ -664,6 +674,7 @@ class ImageMapEditor extends Component {
 			editing,
 			descriptors,
 			objects,
+			isFlag
 		} = this.state;
 		const {
 			onAdd,
@@ -686,6 +697,7 @@ class ImageMapEditor extends Component {
 			onChangeDataSources,
 			onSaveImage,
 		} = this.handlers;
+		console.log('state: ', this.state.isFlag);
 		const action = (
 			<React.Fragment>
 				<CommonButton
@@ -741,7 +753,6 @@ class ImageMapEditor extends Component {
 
 		const title = <ImageMapTitle title={titleContent} action={action} >
 			</ImageMapTitle>;
-
 		
 		const content = (
 			<div className="rde-editor">
@@ -799,10 +810,14 @@ class ImageMapEditor extends Component {
 					{/* <div className="rde-editor-configurations">
 						<MapProperties onChange={onChange} canvasRef={this.canvasRef} />
 					</div> */}
-						<div className="dragDropBox">
-							<ImageDraggerBox />
-						</div>
-					
+						{
+							isFlag && 
+							<div className='dragDropBox'>
+								<ImageDraggerBox
+									hideFlag={() => this.setState({isFlag: false})} canvasRef={this.canvasRef}
+								/>
+							</div>
+						}
 						<Canvas 
 							ref={c => {
 								this.canvasRef = c;
