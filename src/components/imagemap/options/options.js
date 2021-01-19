@@ -30,7 +30,7 @@ export default function OptionsContainer(props) {
 			<Scrollbar>
                 <div className={classes.root}>
                     {(imageProcessingOption === 'Edit') && <EditOption />}
-                    {/* {(imageProcessingOption === 'Bg Image') && <BgImageOption />} */}
+                    {(imageProcessingOption === 'Bg Image') && <BgImageOption />}
                 </div>
                 
 			</Scrollbar>

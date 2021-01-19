@@ -57,12 +57,29 @@
 
 .icon-content:hover {
     background-color: #333333;
+    cursor: pointer;
 }
 
 .icon-content i {
     width: 20px;
     font-size: 18px;
     margin-bottom: 7px;
+}
+
+.MuiInputBase-root {
+    font-family: 'Poppins', 'sans-serif'!important;
+}
+
+// .MuiInput-underline:after{
+//     border-bottom: none!important;
+// }
+
+.MuiInput-underline:hover:not(.Mui-disabled):before {
+
+}
+
+.MuiInput-underline:before {
+    border-bottom: none!important;
 }
 
 .icon-content span {
@@ -322,7 +339,8 @@
 
 #sizeValue-label {
     color: #bbb;
-    font-size: 13px;
+    font-size: 18px;
+    font-family: 'Poppins', 'sans-serif';
 }
 
 #sizeValue {
@@ -331,6 +349,11 @@
     padding-left: 5px;
     padding-right: 5px;
     font-size: 13px;
+    margin-top: 5px;
+}
+
+.MuiInput-inputMarginDense {
+    padding: 0!important;
 }
 
 .dragDropBox {

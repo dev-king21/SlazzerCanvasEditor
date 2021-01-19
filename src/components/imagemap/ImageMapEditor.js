@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Badge, Button, Popconfirm, Menu, Form, Collapse } from 'antd';
 import debounce from 'lodash/debounce';
 import i18n from 'i18next';
+import { Flex } from '../flex';
 
 import ImageMapFooterToolbar from './ImageMapFooterToolbar';
 import ImageMapItems from './ImageMapItems';
@@ -826,8 +827,9 @@ class ImageMapEditor extends Component {
 						/>
 					</div>
 				</div>
+			
 				{imageProcessingOption && <OptionsContainer imageProcessingOption={imageProcessingOption} closeOption = {this.closeOption} />}
-				
+			
 			</div>
 		);
 		return <Container title={title} content={content} loading={loading} className="" />;
