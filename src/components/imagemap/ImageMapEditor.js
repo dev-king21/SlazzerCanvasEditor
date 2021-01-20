@@ -115,7 +115,7 @@ class ImageMapEditor extends Component {
 				},
 			);
 		});
-		console.log('did mount canDragging', this.state.isFlag);
+
 		this.setState({
 			selectedItem: null,
 			isFlag: true
@@ -697,7 +697,7 @@ class ImageMapEditor extends Component {
 			onChangeDataSources,
 			onSaveImage,
 		} = this.handlers;
-		console.log('state: ', this.state.isFlag);
+
 		const action = (
 			<React.Fragment>
 				<CommonButton
@@ -799,22 +799,21 @@ class ImageMapEditor extends Component {
 							this.container = c;
 						}}
 						className="rde-editor-canvas"
-				> 
-					{/* <Form layout="horizontal">
-						ImageProperty.render(
-							canvasRef,
-							form,
-							canvasRef.handler.workarea,
-						)
-					</Form> */}
-					{/* <div className="rde-editor-configurations">
-						<MapProperties onChange={onChange} canvasRef={this.canvasRef} />
-					</div> */}
+					> 
 						{
 							isFlag && 
 							<div className='dragDropBox'>
-								<ImageDraggerBox
-									hideFlag={() => this.setState({isFlag: false})} canvasRef={this.canvasRef}
+								<ImageMapConfigurations
+									canvasRef={this.canvasRef}
+									onChange={onChange}
+									selectedItem={selectedItem}
+									onChangeAnimations={onChangeAnimations}
+									onChangeStyles={onChangeStyles}
+									onChangeDataSources={onChangeDataSources}
+									animations={animations}
+									styles={styles}
+									dataSources={dataSources}
+									hideFlag={() => this.setState({isFlag: false})}
 								/>
 							</div>
 						}

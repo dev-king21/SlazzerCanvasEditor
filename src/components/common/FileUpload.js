@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Upload, Icon } from 'antd';
+import axios from 'axios';
 
 const { Dragger } = Upload;
 
@@ -26,7 +27,7 @@ class FileUpload extends Component {
 	}
 
 	render() {
-		const { accept, limit } = this.props;
+		const { accept, limit, hideFlag } = this.props;
 		const { fileList } = this.state;
 		const props = {
 			accept,
@@ -40,7 +41,9 @@ class FileUpload extends Component {
 				}
 				const { onChange } = this.props;
 				onChange(info.file);
+				console.log("afterLoading :", info.file)
 			},
+			
 			onRemove: file => {
 				this.setState(
 					({ fileList }) => {
@@ -58,27 +61,58 @@ class FileUpload extends Component {
 				);
 			},
 			beforeUpload: file => {
-				const isLimit = file.size / 1024 / 1024 < limit;
-				if (!isLimit) {
-					return false;
-				}
-				this.setState({
-					fileList: [file],
-				});
-				return false;
+				console.log("BeforeLoading  :" , file)
+				const url = 'https://www.slazzer.com/api/v1/remove_image_background';
+				const fData = new FormData();
+				fData.append('source_image_file', file);		
+				axios.post(
+					url,
+					fData,
+					{
+						headers: {
+							'Content-Type': 'multipart/form-data',
+							'API-KEY': '9fd6e94f3dd24659b7961cae090cdac6'
+						}
+					}
+				)
+				.then((res) => {
+					console.log("getting data  : ",res)
+					hideFlag()
+					this.setState({
+						fileList: [file],
+					});
+				})
+				.catch(errors => console.log(errors.data));;
 			},
-			fileList,
+			fileList
 		};
 		return (
 			<Dragger {...props}>
-				<p className="ant-upload-drag-icon">
-					<Icon type="inbox" />
-				</p>
-				<p className="ant-upload-text">Click or drag file to this area to upload</p>
-				<p className="ant-upload-hint">{`Support for a single upload. Limited to ${limit}MB or less`}</p>
+				<div className="dropImgBox">
+					
+					<div className="upload-box"><div className="upload-back-img"></div></div>
+				</div>
 			</Dragger>
 		);
 	}
 }
 
 export default FileUpload;
+
+
+// const url = 'https://www.slazzer.com/api/v1/remove_image_background';
+// 		const fData = new FormData();
+// 		fData.append('source_image_file', files[0]);		
+// 		axios.post(
+// 			url,
+// 			fData,
+// 			{
+// 				headers: {
+// 					'Content-Type': 'multipart/form-data',
+// 					'API-KEY': '9fd6e94f3dd24659b7961cae090cdac6'
+// 				}
+// 			}
+// 		)
+// 		.then((res) => {
+// 		})
+// 		.catch(errors => console.log(errors.res.data));;

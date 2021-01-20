@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Form, Collapse } from 'antd';
-
-import PropertyDefinition from './PropertyDefinition';
-import Scrollbar from '../../common/Scrollbar';
 import ImageProperty from './ImageProperty';
 
 const { Panel } = Collapse;
@@ -14,34 +11,19 @@ class MapProperties extends Component {
 	};
 
 	render() {
-		const { canvasRef, form } = this.props;
-		const showArrow = false;
+	
+		const { canvasRef, form, hideFlag } = this.props;
+	
 		if (canvasRef) {
 			return (
-				<Scrollbar>
-					<Form layout="horizontal">
-						<Collapse bordered={false}>
-							{Object.keys(PropertyDefinition.map).map(key => {
-								return (
-									<Panel key={key} header={PropertyDefinition.map[key].title} showArrow={showArrow}>
-										{/* {PropertyDefinition.map[key].component.render(
-											canvasRef,
-											form,
-											canvasRef.handler.workarea,
-										)} */}
-								
-											ImageProperty.render(
-												canvasRef,
-												form,
-												canvasRef.handler.workarea,
-											)
-										
-									</Panel>
-								);
-							})}
-						</Collapse>
-					</Form>
-				</Scrollbar>
+						<>	
+					{ImageProperty.render(
+						canvasRef,
+						form,
+						canvasRef.handler.workarea,
+						hideFlag
+					)}
+					</>
 			);
 		}
 		return null;
