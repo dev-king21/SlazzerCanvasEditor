@@ -13,7 +13,6 @@ class MapProperties extends Component {
 	render() {
 	
 		const { canvasRef, form, hideFlag } = this.props;
-	
 		if (canvasRef) {
 			return (
 						<>	

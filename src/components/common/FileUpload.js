@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Upload, Icon } from 'antd';
 import axios from 'axios';
+import { v4 } from 'uuid';
 
 const { Dragger } = Upload;
 
@@ -10,6 +11,7 @@ class FileUpload extends Component {
 		onChange: PropTypes.func,
 		limit: PropTypes.number,
 		accept: PropTypes.string,
+		canvasRef: PropTypes.any,
 	};
 
 	static defaultProps = {
@@ -17,7 +19,7 @@ class FileUpload extends Component {
 	};
 
 	state = {
-		fileList: this.props.value ? [this.props.value] : [],
+		fileList: this.props.value ? [this.props.value] : []
 	};
 
 	UNSAFE_componentWillReceiveProps(nextProps) {
@@ -27,21 +29,74 @@ class FileUpload extends Component {
 	}
 
 	render() {
-		const { accept, limit, hideFlag } = this.props;
+		const { canvasRef, accept, limit, hideFlag } = this.props;
 		const { fileList } = this.state;
 		const props = {
 			accept,
 			name: 'file',
 			multiple: false,
 			onChange: info => {
-				const isLimit = info.file.size / 1024 / 1024 < limit;
-				if (!isLimit) {
-					message.error(`Limited to ${limit}MB or less`);
-					return false;
-				}
+				
+				// const isLimit = file.size / 1024 / 1024 < limit;
+				// if (!isLimit) {
+				// 	message.error(`Limited to ${limit}MB or less`);
+				// 	return false;
+				// }
 				const { onChange } = this.props;
-				onChange(info.file);
-				console.log("afterLoading :", info.file)
+				console.log('canvasRef', canvasRef);
+
+				// const url = 'https://www.slazzer.com/api/v1/remove_image_background';
+				// const fData = new FormData();
+				// const uid = info.file.uid;
+				// fData.append('source_image_file', info.file);
+				// fData.append('output_image_format', 'base64')	
+				// axios.post(
+				// 	url,
+				// 	fData,
+				// 	{
+				// 		headers: {
+				// 			'Content-Type': 'multipart/form-data',
+				// 			'API-KEY': '9fd6e94f3dd24659b7961cae090cdac6'
+				// 		}
+				// 	}
+				// )
+				// .then((res) => {
+				// 	console.log("getting data  : ",res)
+
+				// 	fetch(res.data.output_image_base64)
+				// 	.then(res => res.blob())
+				// 	.then(blob => {
+				// 		const nfile = new File([blob], "File name",{ type: "image/png" })
+				// 		nfile.uid = uid;
+				// 		onChange(nfile);
+				// 		hideFlag()
+						
+				// 	})
+					
+				// })
+				// .catch(errors => console.log(errors.data));
+
+				const url = 'https://www.slazzer.com/api/v1/remove_image_background';
+				const fData = new FormData();
+				const headers = {
+					headers: {
+						'Content-Type': 'multipart/form-data',
+						'API-KEY': '9fd6e94f3dd24659b7961cae090cdac6'
+					}
+				};
+				const uid = info.file.uid;
+				fData.append('source_image_file', info.file);
+				// fData.append('output_image_format', 'base64')
+				axios.post(url, fData, headers)
+				.then((res) => {
+					console.log("getting data ->", res)
+					const _option = {name: 'New Image', type: "image", src: res.data.output_image_url, id: v4()};
+				
+					canvasRef.handler.add(_option, true);		
+					hideFlag();			
+				})
+				.catch(errors => console.log(errors));
+
 			},
 			
 			onRemove: file => {
@@ -60,31 +115,11 @@ class FileUpload extends Component {
 					},
 				);
 			},
+
 			beforeUpload: file => {
-				console.log("BeforeLoading  :" , file)
-				const url = 'https://www.slazzer.com/api/v1/remove_image_background';
-				const fData = new FormData();
-				fData.append('source_image_file', file);		
-				axios.post(
-					url,
-					fData,
-					{
-						headers: {
-							'Content-Type': 'multipart/form-data',
-							'API-KEY': '9fd6e94f3dd24659b7961cae090cdac6'
-						}
-					}
-				)
-				.then((res) => {
-					console.log("getting data  : ",res)
-					hideFlag()
-					this.setState({
-						fileList: [file],
-					});
-				})
-				.catch(errors => console.log(errors.data));;
+				
+				return false
 			},
-			fileList
 		};
 		return (
 			<Dragger {...props}>
@@ -99,20 +134,3 @@ class FileUpload extends Component {
 
 export default FileUpload;
 
-
-// const url = 'https://www.slazzer.com/api/v1/remove_image_background';
-// 		const fData = new FormData();
-// 		fData.append('source_image_file', files[0]);		
-// 		axios.post(
-// 			url,
-// 			fData,
-// 			{
-// 				headers: {
-// 					'Content-Type': 'multipart/form-data',
-// 					'API-KEY': '9fd6e94f3dd24659b7961cae090cdac6'
-// 				}
-// 			}
-// 		)
-// 		.then((res) => {
-// 		})
-// 		.catch(errors => console.log(errors.res.data));;

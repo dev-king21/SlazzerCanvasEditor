@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type='file' accept='image/*' onchange='openFile(event)'><br>
+    <img id='output'> -->
+
+    <input type="file">
+
+    <script>
+        function toDataURL(url, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.onload = function() {
+                var reader = new FileReader();
+                reader.onloadend = function() {
+                callback(reader.result);
+                }
+                reader.readAsDataURL(xhr.response);
+            };
+            xhr.open('GET', url);
+            xhr.responseType = 'blob';
+            xhr.send();
+        }
+
+        toDataURL('https://www.slazzer.com/downloads/ee94ea61-5b02-11eb-ac6e-0200a434cc1a/2can-Scatter.png', function(dataUrl) {
+            console.log('RESULT:', dataUrl)
+        })
+
+        function urltoFile(url, filename, mimeType){
+            return (fetch(url)
+                .then(function(res){return res.arrayBuffer();})
+                .then(function(buf){return new File([buf], filename,{type:mimeType});})
+            );
+        }
+        
+        //Usage example:
+        urltoFile('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgv/mL8xfiL8Rfj//UQ/w9GEcdctUsljQAAAABJRU5ErkJggg==', 'hello.png','image/png')
+        .then(function(file1){ console.log(file1);});
+
+        // let file = event.target.files[0];
+        // let data = new FormData();
+        // data.append("file", file, file.name);
+        // let _file = data.get("file");
+    </script>
+  
+</body>
+</html>

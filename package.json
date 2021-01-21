@@ -75,6 +75,7 @@
 		"react-dropzone-uploader": "^2.11.0",
 		"react-helmet": "^5.2.0",
 		"react-hot-loader": "^4.12.20",
+		"react-image-crop": "^8.6.6",
 		"react-json-view": "^1.19.1",
 		"resize-observer-polyfill": "^1.5.1",
 		"store": "^2.0.12",

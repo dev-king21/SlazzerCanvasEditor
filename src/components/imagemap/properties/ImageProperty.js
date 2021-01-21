@@ -21,7 +21,7 @@ export default {
 							],
 							initialValue: data.file,
 						})(
-							 <FileUpload accept="image/*" hideFlag={hideFlag}
+							 <FileUpload accept="image/*" hideFlag={hideFlag} canvasRef= {canvasRef}
 								/> 
 						)}
 					</>
