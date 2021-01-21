@@ -11,7 +11,6 @@ class FileUpload extends Component {
 		onChange: PropTypes.func,
 		limit: PropTypes.number,
 		accept: PropTypes.string,
-		canvasRef: PropTypes.any,
 	};
 
 	static defaultProps = {
@@ -29,7 +28,7 @@ class FileUpload extends Component {
 	}
 
 	render() {
-		const { canvasRef, accept, limit, hideFlag } = this.props;
+		const { accept, limit, hideFlag } = this.props;
 		const { fileList } = this.state;
 		const props = {
 			accept,
@@ -43,59 +42,58 @@ class FileUpload extends Component {
 				// 	return false;
 				// }
 				const { onChange } = this.props;
-				console.log('canvasRef', canvasRef);
-
-				// const url = 'https://www.slazzer.com/api/v1/remove_image_background';
-				// const fData = new FormData();
-				// const uid = info.file.uid;
-				// fData.append('source_image_file', info.file);
-				// fData.append('output_image_format', 'base64')	
-				// axios.post(
-				// 	url,
-				// 	fData,
-				// 	{
-				// 		headers: {
-				// 			'Content-Type': 'multipart/form-data',
-				// 			'API-KEY': '9fd6e94f3dd24659b7961cae090cdac6'
-				// 		}
-				// 	}
-				// )
-				// .then((res) => {
-				// 	console.log("getting data  : ",res)
-
-				// 	fetch(res.data.output_image_base64)
-				// 	.then(res => res.blob())
-				// 	.then(blob => {
-				// 		const nfile = new File([blob], "File name",{ type: "image/png" })
-				// 		nfile.uid = uid;
-				// 		onChange(nfile);
-				// 		hideFlag()
-						
-				// 	})
-					
-				// })
-				// .catch(errors => console.log(errors.data));
 
 				const url = 'https://www.slazzer.com/api/v1/remove_image_background';
 				const fData = new FormData();
-				const headers = {
-					headers: {
-						'Content-Type': 'multipart/form-data',
-						'API-KEY': '9fd6e94f3dd24659b7961cae090cdac6'
-					}
-				};
 				const uid = info.file.uid;
 				fData.append('source_image_file', info.file);
-				// fData.append('output_image_format', 'base64')
-				axios.post(url, fData, headers)
+				fData.append('output_image_format', 'base64')	
+				axios.post(
+					url,
+					fData,
+					{
+						headers: {
+							'Content-Type': 'multipart/form-data',
+							'API-KEY': '9fd6e94f3dd24659b7961cae090cdac6'
+						}
+					}
+				)
 				.then((res) => {
-					console.log("getting data ->", res)
-					const _option = {name: 'New Image', type: "image", src: res.data.output_image_url, id: v4()};
-				
-					canvasRef.handler.add(_option, true);		
-					hideFlag();			
+					console.log("getting data  : ",res)
+
+					fetch(res.data.output_image_base64)
+					.then(res => res.blob())
+					.then(blob => {
+						const nfile = new File([blob], "File name",{ type: "image/png" })
+						nfile.uid = uid;
+						onChange(nfile);
+						hideFlag()
+						console.log("nfile : ",nfile)
+					})
+					
 				})
-				.catch(errors => console.log(errors));
+				.catch(errors => console.log(errors.data));
+
+				// const url = 'https://www.slazzer.com/api/v1/remove_image_background';
+				// const fData = new FormData();
+				// const headers = {
+				// 	headers: {
+				// 		'Content-Type': 'multipart/form-data',
+				// 		'API-KEY': '9fd6e94f3dd24659b7961cae090cdac6'
+				// 	}
+				// };
+				// const uid = info.file.uid;
+				// fData.append('source_image_file', info.file);
+				// // fData.append('output_image_format', 'base64')
+				// axios.post(url, fData, headers)
+				// .then((res) => {
+				// 	console.log("getting data ->", res)
+				// 	const _option = {name: 'New Image', type: "image", src: res.data.output_image_url, id: v4()};
+				
+				// 	canvasRef.handler.add(_option, true);		
+				// 	hideFlag();			
+				// })
+				// .catch(errors => console.log(errors));
 
 			},
 			

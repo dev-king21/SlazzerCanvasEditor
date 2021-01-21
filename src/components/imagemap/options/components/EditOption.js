@@ -167,8 +167,8 @@ const useStyles = makeStyles((theme) => ({
           alignItems: 'center'
       },
       inputValue: {
-          width: 20,
-          margin: '0px 10px',
+          width: 24,
+          margin: '0px 10px 0px 8px',
           color: '#a1a1a1',
           fontSize: '13px',
           display: 'flex',
@@ -286,7 +286,6 @@ function EditOption() {
                         <TextField
                             id="sizeValue"
                             label="Width(Px)"
-                            value="900"
                             type="number"
                             InputLabelProps={{
                                 shrink: true,
@@ -297,7 +296,6 @@ function EditOption() {
                         <TextField
                             id="sizeValue"
                             label="Height(Px)"
-                            value="600"
                             type="number"
                             InputLabelProps={{
                                 shrink: true,
@@ -356,20 +354,23 @@ function EditOption() {
 
                             <Icon name="plus" className={classes.iconHover} onClick={()=>plusStrengthVal()}/>
                             <Icon name="minus" className={classes.iconHover} onClick={()=>minusStrengthVal()}/>
-                            
-                            <Input
-                                className={classes.inputValue}
-                                value={state.strengthValue}
-                                // margin="dense"
-                                // onBlur={handleBlur}
-                                inputProps={{
-                                    step: 10,
-                                    min: 0,
-                                    max: 100,
-                                type: 'text',
-                                'aria-labelledby': 'input strength value',
-                                }}
-                            />
+                                <div style={{position: 'relative'}}>
+                                    <Input
+                                        id={'inputStrengthValue'}
+                                    className={classes.inputValue}
+                                    value={state.strengthValue}
+                                    // margin="dense"
+                                    // onBlur={handleBlur}
+                                    inputProps={{
+                                        step: 1,
+                                        min: -90,
+                                        max: 90,
+                                        type: 'text',
+                                        'aria-labelledby': 'input strength value',
+                                    }}
+                                />
+                                <span style={{ position: 'absolute', top: '0px', right: '3px' }}>&#8728;</span>
+                            </div>
                         </div>
                     </div>
                     
@@ -378,9 +379,12 @@ function EditOption() {
                         <Slider
                             ValueLabelComponent={ValueLabelComponent}
                             value={state.strengthValue}
-                            onChange = {handleStrengthSliderChange}
+                            onChange={handleStrengthSliderChange}
                             aria-label="input strength value"
-                            defaultValue = {20}
+                            defaultValue={0}
+                            step={1}
+                            min={-90}
+                            max={90}
                         />
                     </div>
             </AccordionDetails>

@@ -544,6 +544,7 @@ class ImageMapEditor extends Component {
 								return true;
 							});
 							this.canvasRef.handler.importJSON(data);
+							
 						}
 					};
 					reader.onloadend = () => {
@@ -552,7 +553,7 @@ class ImageMapEditor extends Component {
 					reader.onerror = () => {
 						this.showLoading(false);
 					};
-					reader.readAsText(files[0]);
+					// reader.readAsText(files[0]);
 				}, 500);
 			}
 		},
@@ -561,9 +562,9 @@ class ImageMapEditor extends Component {
 			inputEl.accept = '.json';
 			inputEl.type = 'file';
 			inputEl.hidden = true;
-			inputEl.onchange = e => {
-				this.handlers.onImport(e.target.files);
-			};
+			// inputEl.onchange = e => {
+			// 	this.handlers.onImport(e.target.files);
+			// };
 			document.body.appendChild(inputEl); // required for firefox
 			inputEl.click();
 			inputEl.remove();
@@ -846,6 +847,7 @@ class ImageMapEditor extends Component {
 			
 			</div>
 		);
+		
 		return <Container title={title} content={content} loading={loading} className="" />;
 	}
 }

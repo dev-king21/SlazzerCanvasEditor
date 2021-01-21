@@ -205,9 +205,9 @@ class WorkareaHandler {
 					workarea.set({
 						file: source,
 					});
-					imageFromUrl(reader.result as string).then(resolve);
+
 				};
-				reader.readAsDataURL(source);
+
 			});
 		} else {
 			workarea.set({
@@ -310,9 +310,9 @@ class WorkareaHandler {
 					workarea.set({
 						file: source,
 					});
-					imageFromUrl(reader.result as string).then(resolve);
+
 				};
-				reader.readAsDataURL(source);
+
 			});
 		} else {
 			workarea.set({

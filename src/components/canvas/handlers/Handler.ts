@@ -587,25 +587,25 @@ class Handler implements HandlerOptions {
 	 * @returns
 	 */
 	public setImage = (obj: FabricImage, source?: File | string) => {
-		if (!source) {
-			this.loadImage(obj, null);
-			obj.set('file', null);
-			obj.set('src', null);
-			return;
-		}
-		if (source instanceof File) {
-			const reader = new FileReader();
-			reader.onload = () => {
-				this.loadImage(obj, reader.result as string);
-				obj.set('file', source);
-				obj.set('src', null);
-			};
-			reader.readAsDataURL(source);
-		} else {
-			this.loadImage(obj, source);
-			obj.set('file', null);
-			obj.set('src', source);
-		}
+		// if (!source) {
+		// 	this.loadImage(obj, null);
+		// 	obj.set('file', null);
+		// 	obj.set('src', null);
+		// 	return;
+		// }
+		// if (source instanceof File) {
+		// 	const reader = new FileReader();
+		// 	reader.onload = () => {
+		// 		this.loadImage(obj, reader.result as string);
+		// 		obj.set('file', source);
+		// 		obj.set('src', null);
+		// 	};
+		// 	reader.readAsDataURL(source);
+		// } else {
+		// 	this.loadImage(obj, source);
+		// 	obj.set('file', null);
+		// 	obj.set('src', source);
+		// }
 	};
 
 	/**

@@ -138,7 +138,7 @@ class WorkflowEditor extends Component {
 						this.canvasRef.canvas.setZoom(this.state.zoomRatio);
 					});
 				};
-				reader.readAsText(files[0]);
+				// reader.readAsText(files[0]);
 			}
 		},
 		onUpload: () => {
